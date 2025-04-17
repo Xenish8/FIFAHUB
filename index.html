@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIFA HUB STORY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-overlay">
+    <h1 class="glow-title">FIFA HUB STORY</h1>
+
+
+    <div class="button-grid">
+      <div class="button-row">
+        <button id="andreyBtn" class="player-button active">Andrey</button>
+        <button id="maksBtn" class="player-button">Maks</button>
+      </div>
+    
+      <div class="button-row">
+        <button class="tab tab-trophy active" id="trophyTab">TROPHY</button>
+        <button class="tab tab-statistics" id="statTab">STATISTICS</button>
+      </div>
+    </div>
+        
+
+    <div id="trophy-container" class="accordion-container">
+      <!-- SUPERCUP -->
+<div id="supercup-container" class="accordion-container">
+  <button class="accordion-header supercup-header"><span class="accordion-title">SuperCup</span></button>
+
+  <div class="accordion-body" data-player="andrey">
+    <div class="grid">
+      <!-- Здесь будут команды -->
+      <div class="team"><img src="assets/leipzig.png" alt="RB Leipzig"><span class="badge fifa23">FIFA 23</span></div>
+      <div class="team"><img src="assets/real.png" alt="Real Madrid"><span class="badge fifa24">FIFA 24</span></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WORLD CUP -->
+<div id="worldcup-container" class="accordion-container">
+  <button class="accordion-header worldcup-header"><span class="accordion-title">World Cup</span></button>
+  <div class="accordion-body" data-player="andrey">
+    <div class="grid">
+      <!-- Здесь будут команды -->
+      <div class="team highlight"><img src="assets/switzerland.png" alt="Switzerland"><span class="badge fifa21">FIFA 21</span></div>
+      <div class="team highlight"><img src="assets/switzerland.png" alt="Switzerland"><span class="badge fifa21">FIFA 21</span></div>
+      <div class="team"><img src="assets/portugal.png" alt="Portugal"><span class="badge fifa21">FIFA 21</span></div>
+      <div class="team"><img src="assets/wales.png" alt="Wales"><span class="badge fifa22">FIFA 22</span></div>
+      <div class="team"><img src="assets/japan.png" alt="Japan"><span class="badge fifa23">FIFA 23</span></div>
+      <div class="team"><img src="assets/england.png" alt="England"><span class="badge fifa23">FIFA 23</span></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EURO -->
+<div id="euro-container" class="accordion-container">
+  <button class="accordion-header euro-header"><span class="accordion-title">EURO</span></button>
+  <div class="accordion-body" data-player="andrey">
+    <div class="grid">
+      <!-- Здесь будут команды -->
+      <div class="team"><img src="assets/switzerland.png" alt="Швейцария"><span class="badge fifa21">FIFA 21</span></div>
+      <div class="team"><img src="assets/spain.png" alt="Испания"><span class="badge fifa21">FIFA 21</span></div>
+      <div class="team"><img src="assets/netherlands.png" alt="Нидерланды"><span class="badge fifa22">FIFA 22</span></div>
+      <div class="team"><img src="assets/wales.png" alt="Уэльс"><span class="badge fifa22">FIFA 22</span></div>
+      <div class="team"><img src="assets/england.png" alt="Англия"><span class="badge fifa23">FIFA 23</span></div>
+      <div class="team"><img src="assets/england.png" alt="Англия"><span class="badge fifa24">FIFA 24</span></div>
+
+      <div class="team"><img src="assets/norway.png" alt="Норвегия"><span class="badge fifa24">FIFA 24</span></div>
+      <div class="team"><img src="assets/spain.png" alt="Испания"><span class="badge fifa24">FIFA 24</span></div>
+      <div class="team"><img src="assets/norway.png" alt="Норвегия"><span class="badge fifa24">FIFA 24</span></div>
+      <div class="team highlight"><img src="assets/portugal.png" alt="Португалия"><span class="badge fifa24">FIFA 24</span></div>
+      <div class="team highlight"><img src="assets/portugal.png" alt="Португалия"><span class="badge fifa24">FIFA 24</span></div>
+      <div class="team"><img src="assets/belgium.png" alt="Бельгия"><span class="badge fifa24">FIFA 24</span></div>
+
+<div class="team"><img src="assets/england.png" alt="Англия"><span class="badge fifa24">FIFA 24</span></div>
+<div class="team"><img src="assets/italy.png" alt="Италия"><span class="badge fifa24">FIFA 24</span></div>
+<div class="team"><img src="assets/france.png" alt="Франция"><span class="badge fifa24">FIFA 24</span></div>
+<div class="team"><img src="assets/croatia.png" alt="Хорватия"><span class="badge fifa24">FIFA 24</span></div>
+<div class="team"><img src="assets/austria.png" alt="Австрия"><span class="badge fifa24">FIFA 24</span></div>
+
+
+    </div>
+  </div>
+</div>
+      <!-- CHAMPIONS LEAGUE -->
+      <button class="accordion-header champions-header"><span class="accordion-title">Champions League</span></button>
+      <div class="accordion-body" data-player="andrey">
+        <div class="grid">
+          <div class="team"><img src="assets/lokomotiv.png" alt="Локомотив"><span class="badge fifa19">FIFA 19</span></div>
+          <div class="team"><img src="assets/lokomotiv.png" alt="Локомотив"><span class="badge fifa19">FIFA 19</span></div>
+          <div class="team highlight"><img src="assets/leipzig.png" alt="Лейпциг"><span class="badge fifa20">FIFA 20</span></div>
+          <div class="team highlight"><img src="assets/leipzig.png" alt="Лейпциг"><span class="badge fifa20">FIFA 20</span></div>
+          <div class="team"><img src="assets/leipzig.png" alt="Лейпциг"><span class="badge fifa20">FIFA 20</span></div>
+          <div class="team"><img src="assets/leipzig.png" alt="Лейпциг"><span class="badge fifa20">FIFA 20</span></div>
+          <div class="team"><img src="assets/atletico.png" alt="Атлетико Мадрид"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team"><img src="assets/inter.png" alt="Интер"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team highlight"><img src="assets/bayern.png" alt="Бавария"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team highlight"><img src="assets/bayern.png" alt="Бавария"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team"><img src="assets/bayern.png" alt="Бавария"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team"><img src="assets/inter.png" alt="Интер"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team"><img src="assets/bayern.png" alt="Бавария"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team"><img src="assets/mancity.png" alt="Манчестер Сити"><span class="badge fifa21">FIFA 21</span></div>
+          <div class="team"><img src="assets/bayern.png" alt="Бавария"><span class="badge fifa22">FIFA 22</span></div>
+          <div class="team"><img src="assets/bayern.png" alt="Бавария"><span class="badge fifa22">FIFA 22</span></div>
+          <div class="team"><img src="assets/atletico.png" alt="Атлетико Мадрид"><span class="badge fifa22">FIFA 22</span></div>
+          <div class="team"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight-purple"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight-purple"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight-purple"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight-purple"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight-purple"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight-purple"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team highlight-purple double-glow"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+          <div class="team"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+        </div>
+      </div>
+    </div>
+
+<!-- SUPERCUP — MAKS
+<div class="accordion-container">
+  <button class="accordion-header supercup-header"><span span class="accordion-title">SuperCup</span></button>
+  <div class="accordion-body" data-player="maks">
+    <div class="grid">
+      <div style="height: 20px;"></div>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- WORLD CUP — MAKS -->
+<div class="accordion-container">
+  <button class="accordion-header worldcup-header"><span class="accordion-title">World Cup</span></button>
+  <div class="accordion-body" data-player="maks">
+    <div class="grid">
+      <div class="team"><img src="assets/france.png" alt="Франция"><span class="badge fifa21">FIFA 21</span></div>
+      <div class="team"><img src="assets/scotland.png" alt="Шотландия"><span class="badge fifa23">FIFA 23</span></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EURO — MAKS -->
+<div class="accordion-container">
+  <button class="accordion-header euro-header"><span class="accordion-title">EURO</span></button>
+  <div class="accordion-body" data-player="maks">
+    <div class="grid">
+      <div class="team"><img src="assets/netherlands.png" alt="Нидерланды"><span class="badge fifa21">FIFA 21</span></div>
+      <div class="team highlight"><img src="assets/netherlands.png" alt="Нидерланды"><span class="badge fifa24">FIFA 24</span></div>
+      <div class="team highlight"><img src="assets/netherlands.png" alt="Нидерланды"><span class="badge fifa24">FIFA 24</span></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CHAMPIONS LEAGUE — MAKS -->
+<div class="accordion-container">
+  <button class="accordion-header champions-header"><span class="accordion-title">Champions League</span></button>
+  <div class="accordion-body" data-player="maks">
+    <div class="grid">
+      <div class="team"><img src="assets/benfica.png" alt="Бенфика"><span class="badge fifa20">FIFA 20</span></div>
+<div class="team highlight"><img src="assets/valencia.png" alt="Валенсия"><span class="badge fifa20">FIFA 20</span></div>
+<div class="team highlight"><img src="assets/valencia.png" alt="Валенсия"><span class="badge fifa20">FIFA 20</span></div>
+<div class="team"><img src="assets/liverpool.png" alt="Ливерпуль"><span class="badge fifa21">FIFA 21</span></div>
+<div class="team"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa21">FIFA 21</span></div>
+<div class="team"><img src="assets/barcelona.png" alt="Барселона"><span class="badge fifa22">FIFA 22</span></div>
+<div class="team"><img src="assets/ajax.png" alt="Аякс"><span class="badge fifa22">FIFA 22</span></div>
+<div class="team"><img src="assets/milan.png" alt="Милан"><span class="badge fifa22">FIFA 22</span></div>
+<div class="team"><img src="assets/bayern.png" alt="Бавария"><span class="badge fifa22">FIFA 22</span></div>
+<div class="team"><img src="assets/psg.png" alt="ПСЖ"><span class="badge fifa22">FIFA 22</span></div>
+<div class="team"><img src="assets/psg.png" alt="ПСЖ"><span class="badge fifa22">FIFA 22</span></div>
+<div class="team"><img src="assets/milan.png" alt="Милан"><span class="badge fifa22">FIFA 22</span></div>
+<div class="team"><img src="assets/galatasaray.png" alt="Галатасарай"><span class="badge fifa23">FIFA 23</span></div>
+<div class="team"><img src="assets/real.png" alt="Реал Мадрид"><span class="badge fifa24">FIFA 24</span></div>
+
+    </div>
+  </div>
+</div>
+
+<div id="statistics-container" style="display: none;">
+<div id="andrey-stats" data-player="andrey">
+  <h2 style="color: white; text-align: center; margin-bottom: 30px;">Statistics: Andrey</h2>
+  <!-- ВОТ СЮДА вставляешь -->
+  <div class="stats-grid">
+    <div class="stat-box">
+      <h3>Score</h3>
+      <p>55 трофеев</p>
+    </div>
+    <div class="stat-box">
+      <h3>Max Streak</h3>
+      <p>6 побед подряд</p>
+    </div>
+    <div class="stat-box">
+      <h3>Avg/Season</h3>
+      <p>9.1 трофея</p>
+    </div>
+    <div class="stat-box">
+      <h3>Best Team</h3>
+      <p>Real Madrid (14)</p>
+    </div>
+  </div>
+  
+  <div class="stats-grid">
+    <div class="stat-box">
+      <h3>Best FIFA</h3>
+      <p>FIFA 24 (26 трофеев)</p>
+    </div>
+    <div class="stat-box">
+      <h3>Best Country</h3>
+      <p>Англия (4 трофея)</p>
+    </div>
+    <div class="stat-box">
+      <h3>Top 3 Teams</h3>
+      <p>Real (14), Bayern (6), Leipzig (5)</p>
+      
+    </div>
+    <div class="stat-box">
+      <h3>FIFA Seasons</h3>
+      <p>FIFA 19–24</p>
+    </div>
+  </div>
+  
+  
+  <div class="quote-facts">
+    <blockquote id="quote-text">"Уникальных команд: 20"</blockquote>
+  </div>
+  
+
+  <h3 style="color: white; margin-top: 40px; text-align: center;"></h3>
+<div class="unique-teams-grid">
+  <div class="team-tile" data-team="lokomotiv">
+    <img src="assets/lokomotiv.png" alt="Lokomotiv">
+    <p>Lokomotiv</p>
+  </div>
+  <div class="team-tile" data-team="leipzig">
+    <img src="assets/leipzig.png" alt="Leipzig">
+    <p>Leipzig</p>
+  </div>
+  <div class="team-tile" data-team="atletico">
+    <img src="assets/atletico.png" alt="Atletico Madrid">
+    <p>Atletico</p>
+  </div>
+  <div class="team-tile" data-team="inter">
+    <img src="assets/inter.png" alt="Inter">
+    <p>Inter</p>
+  </div>
+  <div class="team-tile" data-team="bayern">
+    <img src="assets/bayern.png" alt="Bayern">
+    <p>Bayern</p>
+  </div>
+  <div class="team-tile" data-team="mancity">
+    <img src="assets/mancity.png" alt="Man City">
+    <p>Man City</p>
+  </div>
+  <div class="team-tile" data-team="real">
+    <img src="assets/real.png" alt="Real Madrid">
+    <p>Real Madrid</p>
+  </div>
+  <div class="team-tile" data-team="switzerland">
+    <img src="assets/switzerland.png" alt="Switzerland">
+    <p>Switzerland</p>
+  </div>
+  <div class="team-tile" data-team="portugal">
+    <img src="assets/portugal.png" alt="Portugal">
+    <p>Portugal</p>
+  </div>
+  <div class="team-tile" data-team="wales">
+    <img src="assets/wales.png" alt="Wales">
+    <p>Wales</p>
+  </div>
+  <div class="team-tile" data-team="japan">
+    <img src="assets/japan.png" alt="Japan">
+    <p>Japan</p>
+  </div>
+  <div class="team-tile" data-team="england">
+    <img src="assets/england.png" alt="England">
+    <p>England</p>
+  </div>
+  <div class="team-tile" data-team="spain">
+    <img src="assets/spain.png" alt="Spain">
+    <p>Spain</p>
+  </div>
+  <div class="team-tile" data-team="netherlands">
+    <img src="assets/netherlands.png" alt="Netherlands">
+    <p>Netherlands</p>
+  </div>
+  <div class="team-tile" data-team="norway">
+    <img src="assets/norway.png" alt="Norway">
+    <p>Norway</p>
+  </div>
+  <div class="team-tile" data-team="belgium">
+    <img src="assets/belgium.png" alt="Belgium">
+    <p>Belgium</p>
+  </div>
+  <div class="team-tile" data-team="italy">
+    <img src="assets/italy.png" alt="Italy">
+    <p>Italy</p>
+  </div>
+  <div class="team-tile" data-team="france">
+    <img src="assets/france.png" alt="France">
+    <p>France</p>
+  </div>
+  <div class="team-tile" data-team="croatia">
+    <img src="assets/croatia.png" alt="Croatia">
+    <p>Croatia</p>
+  </div>
+  <div class="team-tile" data-team="austria">
+    <img src="assets/austria.png" alt="Austria">
+    <p>Austria</p>
+  </div>
+</div>
+
+
+  
+  
+</div>
+
+<div id="maks-stats" data-player="maks" style="display: none;">
+  <h2 style="color: white; text-align: center; margin-bottom: 30px;">Statistics: Maks</h2>
+
+  <div class="stats-grid">
+    <div class="stat-box">
+      <h3>🏆 Score</h3>
+      <p>19 трофеев</p>
+    </div>
+    <div class="stat-box">
+      <h3>🔥 Streak</h3>
+      <p>3 победы подряд</p>
+    </div>
+    <div class="stat-box">
+      <h3>📈 Avg/Season</h3>
+      <p>4.75 трофея</p>
+    </div>
+    <div class="stat-box">
+      <h3>⭐ Best Team</h3>
+      <p>Valencia (2)</p>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-box">
+      <h3>Best FIFA</h3>
+      <p>FIFA 22 (5 трофеев)</p>
+    </div>
+    <div class="stat-box">
+      <h3>Best Country</h3>
+      <p>Нидерланды (3 трофея)</p>
+    </div>
+    <div class="stat-box">
+      <h3>Top 3 Teams</h3>
+      <p>Valencia (2), Milan (2), PSG (2)</p>
+    </div>
+    <div class="stat-box">
+      <h3>FIFA Seasons</h3>
+      <p>FIFA 20–24</p>
+    </div>
+
+  </div>
+  
+
+  <div class="quote-facts" id="maks-facts-box">
+    <div id="quote-text-maks">—</div>
+  </div>
+  
+  <h3 style="color: white; margin-top: 40px; text-align: center;"></h3>
+<div class="unique-teams-grid">
+  <div class="team-tile" data-team="valencia">
+    <img src="assets/valencia.png" alt="Valencia">
+    <p>Valencia</p>
+  </div>
+  <div class="team-tile" data-team="milan">
+    <img src="assets/milan.png" alt="Milan">
+    <p>Milan</p>
+  </div>
+  <div class="team-tile" data-team="psg">
+    <img src="assets/psg.png" alt="PSG">
+    <p>PSG</p>
+  </div>
+  <div class="team-tile" data-team="liverpool">
+    <img src="assets/liverpool.png" alt="Liverpool">
+    <p>Liverpool</p>
+  </div>
+  <div class="team-tile" data-team="real">
+    <img src="assets/real.png" alt="Real Madrid">
+    <p>Real Madrid</p>
+  </div>
+  <div class="team-tile" data-team="barcelona">
+    <img src="assets/barcelona.png" alt="Barcelona">
+    <p>Barcelona</p>
+  </div>
+  <div class="team-tile" data-team="ajax">
+    <img src="assets/ajax.png" alt="Ajax">
+    <p>Ajax</p>
+  </div>
+  <div class="team-tile" data-team="bayern">
+    <img src="assets/bayern.png" alt="Bayern">
+    <p>Bayern</p>
+  </div>
+  <div class="team-tile" data-team="galatasaray">
+    <img src="assets/galatasaray.png" alt="Galatasaray">
+    <p>Galatasaray</p>
+  </div>
+  <div class="team-tile" data-team="benfica">
+    <img src="assets/benfica.png" alt="Benfica">
+    <p>Benfica</p>
+  </div>
+  <div class="team-tile" data-team="netherlands">
+    <img src="assets/netherlands.png" alt="Netherlands">
+    <p>Netherlands</p>
+  </div>
+  <div class="team-tile" data-team="scotland">
+    <img src="assets/scotland.png" alt="Scotland">
+    <p>Scotland</p>
+  </div>
+  <div class="team-tile" data-team="france">
+    <img src="assets/france.png" alt="France">
+    <p>France</p>
+  </div>
+</div>
+
+
+  
+</div>
+
+
+
+  </div>  
+
+  
+
+
+  <!-- Контейнер для статистики команды -->
+<div id="team-detail-view" class="team-detail-view" style="display: none;">
+  <button class="back-button">← Назад</button>
+  <h2 id="team-name">Команда</h2>
+  <ul id="team-history"></ul>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
