@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Важные элементы
+  const draftTab = document.getElementById("draftTab");
+  const draftContainer = document.getElementById("draft-container");
   const trophyTab = document.getElementById("trophyTab");
   const statTab = document.getElementById("statTab");
   const trophyContainer = document.getElementById("trophy-container");
@@ -66,6 +68,28 @@ document.addEventListener("DOMContentLoaded", () => {
         bodies.forEach(body => {
           body.parentElement.style.display = "none";
         });
+        if (!draftTab.classList.contains("active")) {
+          draftContainer.style.display = "none";
+        }
+
+        // ❗️ Если активен раздел DRAFT, скрываем его при переключении игрока
+if (draftTab.classList.contains("active")) {
+  draftTab.classList.remove("active");
+  draftContainer.style.display = "none";
+
+  // Можно также переключить на статистику по умолчанию:
+  statTab.classList.add("active");
+  statsContainer.style.display = "block";
+
+  if (player === "andrey") {
+    andreyStats.style.display = "block";
+    maksStats.style.display = "none";
+  } else {
+    andreyStats.style.display = "none";
+    maksStats.style.display = "block";
+  }
+}
+
       }
     });
   });
@@ -75,9 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
   statTab.addEventListener("click", () => {
     statTab.classList.add("active");
     trophyTab.classList.remove("active");
+    draftTab.classList.remove("active");
   
     trophyContainer.style.display = "none";
     statsContainer.style.display = "block";
+    draftContainer.style.display = "none";
   
     const activePlayer = document.querySelector(".player-button.active").id;
     if (activePlayer === "andreyBtn") {
@@ -99,9 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
   trophyTab.addEventListener("click", () => {
     trophyTab.classList.add("active");
     statTab.classList.remove("active");
+    draftTab.classList.remove("active");
 
     trophyContainer.style.display = "block";
     statsContainer.style.display = "none";
+    draftContainer.style.display = "none";
 
     const activePlayer = document.querySelector(".player-button.active").id;
     const player = activePlayer === "andreyBtn" ? "andrey" : "maks";
@@ -117,6 +145,27 @@ document.addEventListener("DOMContentLoaded", () => {
     andreyStats.style.display = "none";
     maksStats.style.display = "none";
   });
+
+  draftTab.addEventListener("click", () => {
+    draftTab.classList.add("active");
+    trophyTab.classList.remove("active");
+    statTab.classList.remove("active");
+  
+    draftContainer.style.display = "block";  // ✅ ПОКАЗЫВАЕМ
+    trophyContainer.style.display = "none";
+    statsContainer.style.display = "none";
+  
+    andreyStats.style.display = "none";
+    maksStats.style.display = "none";
+
+      // Скрыть аккордеоны обоих игроков
+  bodies.forEach(body => {
+    body.parentElement.style.display = "none";
+  });
+
+  });
+  
+  
 
   // По умолчанию — Андрей + Trophy
   bodies.forEach(body => {

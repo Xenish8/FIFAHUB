@@ -949,7 +949,7 @@ h1 {
 
 #team-detail-view {
   width: 100%;
-  max-width: 1000px; /* или 1100px, если хочешь ещё шире */
+  max-width: 1000px; 
   ...
 }
 
@@ -983,4 +983,8 @@ h1 {
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   text-align: center;
   min-width: 80px;
+}
+
+.hidden {
+  display: none;
 }
