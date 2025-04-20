@@ -34,12 +34,28 @@
       
       <div id="draft-stage-1">
         <div class="slot-machine-container">
-          <div class="slot glow-green" data-category="random">—</div>
-          <div class="slot glow-blue" data-category="middle">—</div>
-          <div class="slot glow-orange" data-category="high">—</div>
-          <div class="slot glow-purple" data-category="top">—</div>
-          <div class="slot glow-red" data-category="legendary">—</div>
+          <div class="slot-wrapper">
+            <div class="slot-label">Random Team</div>
+            <div class="slot glow-green" data-category="random">—</div>
           </div>
+          <div class="slot-wrapper">
+            <div class="slot-label">Middle Team</div>
+            <div class="slot glow-blue" data-category="middle">—</div>
+          </div>
+          <div class="slot-wrapper">
+            <div class="slot-label">High Team</div>
+            <div class="slot glow-orange" data-category="high">—</div>
+          </div>
+          <div class="slot-wrapper">
+            <div class="slot-label">Top Team</div>
+            <div class="slot glow-purple" data-category="top">—</div>
+          </div>
+          <div class="slot-wrapper">
+            <div class="slot-label">Legendary Team</div>
+            <div class="slot glow-red" data-category="legendary">—</div>
+          </div>
+        </div>
+        
     
 
           <button id="spin-button" class="action-button">🎲 SPIN</button>
@@ -62,7 +78,12 @@
           <div id="case-strip"></div>
           <div id="case-line"></div>
         </div>
-        <button id="open-case-button" class="action-button">🔓 Открыть кейс</button>
+        <div class="case-button-group">
+          <button id="open-case-button">🔓 ROLL</button>
+          <button id="restart-button">🔁 Restart</button>
+        </div>
+        
+
 
         <div id="case-winner" class="hidden">🏆 <span id="case-winner-name"></span></div>
       </div>
@@ -490,6 +511,24 @@
   <ul id="team-history"></ul>
 </div>
 
-  <script src="script.js"></script>
+<audio id="spin-sound" src="assets/sounds/spin.mp3" preload="auto"></audio>
+
+<div id="reroll-game" class="hidden">
+  <p class="reroll-title">REROLL CHANCE = 20%!</p>
+
+  <div id="reroll-tiles"></div>
+
+  <div class="reroll-buttons">
+    <button id="reroll-shuffle" class="button-primary">🔀 Shuffle</button>
+    <button id="reroll-start" class="button-primary" disabled>🚀 Start</button>    
+  </div>
+
+  <div id="reroll-final-message"></div>
+</div>
+
+
+
+<script type="module" src="caseSpinner.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,25 @@
+import { startCaseSpin } from './caseSpinner.js';
+function resetRerollGame() {
+  const game = document.getElementById("reroll-game");
+  const tiles = document.getElementById("reroll-tiles");
+  const final = document.getElementById("reroll-final-message");
+  const start = document.getElementById("reroll-start");
+  const shuffle = document.getElementById("reroll-shuffle");
+
+  if (game) game.classList.add("hidden");
+  if (tiles) tiles.innerHTML = "";
+  if (final) final.textContent = "";
+  if (start) start.disabled = true;
+  if (shuffle) shuffle.disabled = false;
+
+  // ⬇️ ДОБАВЛЯЕМ ЭТО
+  const rerollTiles = document.querySelectorAll(".reroll-tile");
+  rerollTiles.forEach(tile => {
+    tile.onclick = null;
+  });
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // Важные элементы
   const draftTab = document.getElementById("draftTab");
@@ -12,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const accordionHeaders = document.querySelectorAll(".accordion-header");
   const playerButtons = document.querySelectorAll(".player-button");
   const bodies = document.querySelectorAll(".accordion-body");
-
+  
   // Аккордеоны
   accordionHeaders.forEach(header => {
     header.addEventListener("click", () => {
@@ -147,6 +169,7 @@ if (draftTab.classList.contains("active")) {
   });
 
   draftTab.addEventListener("click", () => {
+    
     draftTab.classList.add("active");
     trophyTab.classList.remove("active");
     statTab.classList.remove("active");
@@ -509,6 +532,19 @@ const draftCategories = {
 };
 
 document.getElementById("spin-button").addEventListener("click", async () => {
+
+  const spinAudio = document.getElementById("spin-sound");
+if (spinAudio) {
+  try {
+    spinAudio.currentTime = 0;
+    await spinAudio.play();
+  } catch (err) {
+    console.warn("Звук не воспроизвёлся:", err);
+  }
+}
+
+  
+  
   const slots = document.querySelectorAll(".slot");
 
   // Обнуляем все слоты
@@ -597,6 +633,8 @@ function createRound2Button() {
     setTimeout(() => {
       effect.classList.add("hidden");
       cards.classList.remove("hidden");
+      document.getElementById("card-container").classList.add("visible");
+
 
       function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -621,21 +659,27 @@ function createRound2Button() {
 
         card.addEventListener("click", () => {
           // если уже выбрали 3, не даём больше кликать
-          const eliminated = document.querySelectorAll(".card.eliminated");
-          if (eliminated.length >= 3) return;
-        
-          // отмечаем карту как выброшенную
-          card.classList.add("eliminated");
-        
-          const updatedEliminated = document.querySelectorAll(".card.eliminated");
-          if (updatedEliminated.length === 3) {
-            // раскрываем ВСЕ карточки
-            document.querySelectorAll(".card").forEach(c => {
-              c.textContent = c.dataset.team;
-            });
-        
-            // показываем кнопку перехода к 3 раунду
-            document.getElementById("to-round-3").classList.remove("hidden");
+  // если уже выбрали 2 — не даём больше выбирать
+const selected = document.querySelectorAll(".card.selected");
+if (selected.length >= 2 || card.classList.contains("selected")) return;
+
+// отмечаем карту как выбранную
+card.classList.add("selected");
+
+// если выбрано 2 — показываем остальных как выбывших
+const updatedSelected = document.querySelectorAll(".card.selected");
+if (updatedSelected.length === 2) {
+  // раскрываем ВСЕ карточки
+  document.querySelectorAll(".card").forEach(c => {
+    c.textContent = c.dataset.team;
+    if (!c.classList.contains("selected")) {
+      c.classList.add("eliminated");
+    }
+    c.style.pointerEvents = "none"; // отключаем клик
+  });
+
+  // показываем кнопку 3 раунда
+  document.getElementById("to-round-3").classList.remove("hidden");
         
             // отключаем все клики по карточкам
             document.querySelectorAll(".card").forEach(c => {
@@ -657,99 +701,83 @@ document.getElementById("to-round-3").addEventListener("click", () => {
   document.getElementById("draft-stage-2").classList.add("hidden");
   document.getElementById("draft-stage-3").classList.remove("hidden");
 
+  const tileWidth = 156;
+  const totalTiles = 500;
+  
   const remaining = Array.from(document.querySelectorAll(".card"))
     .filter(c => !c.classList.contains("eliminated"))
     .map(c => c.dataset.team);
-
+  
   const caseStrip = document.getElementById("case-strip");
   caseStrip.innerHTML = "";
-
-  // Повторяем команды чередуя их, чтобы создать длинную ленту
+  
+  // 1. Генерация массива из 50 случайных команд
   const tiles = [];
-// Делаем рандомную длинную череду из 2 команд
-for (let i = 0; i < 500; i++) {
-  const team = remaining[Math.floor(Math.random() * remaining.length)];
-  const tile = document.createElement("div");
-  tile.className = "case-tile";
-  tile.textContent = team;
-  tile.dataset.team = team;
-  caseStrip.appendChild(tile);
-}
-// переместим ленту на случайный старт
-const tileWidth = 156;
-const startIndex = Math.floor(Math.random() * 100);
-const current = startIndex * tileWidth;
-caseStrip.style.transform = `translateX(-${current}px)`;
-
-// сохраняем значение current глобально для скрипта
-window.caseStartOffset = current;
-
+  for (let i = 0; i < totalTiles; i++) {
+    const team = remaining[Math.floor(Math.random() * remaining.length)];
+    const tile = document.createElement("div");
+    tile.className = "case-tile";
+    tile.textContent = team;
+    tile.dataset.team = team;
+    tiles.push(tile);
+    caseStrip.appendChild(tile);
+  }
+  
+  // 2. Стартуем с 0, едем на расстояние всей ленты
+  const totalDistance = tileWidth * totalTiles;
+  caseStrip.style.transform = `translateX(0px)`;
+  window.caseStartOffset = 0;
+  window.caseFinalOffset = totalDistance;
+  
 
 });
 
 document.getElementById("open-case-button").addEventListener("click", () => {
-  const caseStrip = document.getElementById("case-strip");
-  const tileWidth = 156;
-
-
-  // случайная стартовая точка + случайный сдвиг
-  const startIndex = Math.floor(Math.random() * 200);
-  const randomOffset = Math.random() * tileWidth; // 0–155 пикселей
-
-  let current = startIndex * tileWidth + randomOffset;
-  caseStrip.style.transform = `translateX(-${current}px)`;
-
-  let velocity = 0;
-  let phase = "acceleration";
-  let timeElapsed = 0;
-  const intervalTime = 16;
-
-  const interval = setInterval(() => {
-    timeElapsed += intervalTime;
-
-    if (phase === "acceleration") {
-      velocity += 0.3;
-      if (timeElapsed >= 5000) {
-        phase = "constant";
-        timeElapsed = 0;
-      }
-    } else if (phase === "constant") {
-      if (timeElapsed >= 5000) {
-        phase = "deceleration";
-        timeElapsed = 0;
-      }
-    } else if (phase === "deceleration") {
-      velocity *= 0.985;
-      if (velocity < 0.4) {
-        clearInterval(interval);
-
-        // Определяем точный центр
-        const visibleWidth = document.getElementById("case-container").offsetWidth;
-        const centerOffset = current + visibleWidth / 2;
-
-        // Вычисляем ближайшую плитку
-        const rawIndex = centerOffset / tileWidth;
-        const winnerIndex = Math.round(rawIndex); // округляем до ближайшей
-
-        const winnerTile = caseStrip.children[winnerIndex];
-
-        if (winnerTile) {
-          const winnerName = winnerTile.dataset.team || winnerTile.textContent;
-          document.getElementById("case-winner-name").textContent = winnerName;
-          document.getElementById("case-winner").classList.remove("hidden");
-        } else {
-          document.getElementById("case-winner-name").textContent = "Ошибка";
-          document.getElementById("case-winner").classList.remove("hidden");
-        }
-
-        return;
-      }
+  startCaseSpin({
+    containerId: "case-container",
+    stripId: "case-strip",
+    tileWidth: 156,
+    onWin: (winnerName) => {
+      document.getElementById("case-winner-name").textContent = winnerName;
+      document.getElementById("case-winner").classList.remove("hidden");
     }
-
-    current += velocity;
-    caseStrip.style.transform = `translateX(-${current}px)`;
-  }, intervalTime);
+  });
 });
+
+document.getElementById("restart-button").addEventListener("click", () => {
+  // Скрываем все этапы
+  document.getElementById("draft-stage-1").classList.remove("hidden");
+  document.getElementById("draft-stage-2").classList.add("hidden");
+  document.getElementById("draft-stage-3").classList.add("hidden");
+
+  document.getElementById("draft-round-label").textContent = "Round 1 - Draft";
+
+  document.querySelectorAll(".slot").forEach(slot => {
+    slot.textContent = "—";
+  });
+
+  document.getElementById("case-strip").innerHTML = "";
+  document.getElementById("case-winner").classList.add("hidden");
+  document.getElementById("to-round-3").classList.add("hidden");
+
+  document.getElementById("card-container").innerHTML = "";
+  document.getElementById("generation-effect").classList.remove("hidden");
+
+  // ⛔️ Принудительно скрываем мини-игру!
+  document.getElementById("reroll-game").classList.add("hidden");
+
+  // ⛔️ Сбросим все клики с плиток mini-игры
+  const rerollTiles = document.querySelectorAll(".reroll-tile");
+  rerollTiles.forEach(tile => tile.onclick = null);
+
+  // Общий ресет
+  resetRerollGame();
+});
+
+
+
+
+
 
 
 
