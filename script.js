@@ -500,4 +500,262 @@ function showNextFactMaks() {
 setInterval(showNextFactMaks, 3500);
 showNextFactMaks();
 
+const draftCategories = {
+  random: ["Real Madrid", "Barcelona", "PSG", "Japan", "Norway", "Benfica", "Lokomotiv", "Liverpool", "Galatasaray"],
+  middle: ["Japan", "Norway", "Belgium", "Switzerland", "Galatasaray"],
+  high: ["Liverpool", "Inter", "Ajax", "Benfica", "Atletico", "Leipzig"],
+  top: ["PSG", "Chelsea", "Barcelona", "Arsenal", "Napoli"],
+  legendary: ["Real Madrid", "Bayern", "AC Milan", "Manchester United", "Brazil", "France"]
+};
+
+document.getElementById("spin-button").addEventListener("click", async () => {
+  const slots = document.querySelectorAll(".slot");
+
+  // Обнуляем все слоты
+  slots.forEach(slot => {
+    slot.textContent = "—";
+    slot.classList.remove("spin");
+  });
+
+  let usedTeams = [];
+
+  for (let i = 0; i < slots.length; i++) {
+    const slot = slots[i];
+    const category = slot.dataset.category;
+  
+    // Копируем список команд этой категории
+    let availableTeams = [...draftCategories[category]];
+  
+    // Исключаем уже выпавшие команды
+    availableTeams = availableTeams.filter(team => !usedTeams.includes(team));
+  
+    // Специально: если это НЕ random — удалим команду, выпавшую в random позже
+    if (i === 0 && category === "random") {
+      // Просто крутим Random пока
+    } else {
+      // Если вдруг после фильтра ничего не осталось
+      if (availableTeams.length === 0) {
+        slot.textContent = "⚠️ No teams";
+        continue;
+      }
+    }
+  
+    // Анимация
+    slot.classList.add("spin");
+    slot.textContent = "⏳";
+  
+    await new Promise(resolve => setTimeout(resolve, 3000));
+  
+    // Остановка
+    slot.classList.remove("spin");
+  
+    const team = availableTeams[Math.floor(Math.random() * availableTeams.length)];
+    slot.textContent = team;
+  
+    // Добавляем в список использованных
+    usedTeams.push(team);
+  
+    // Если это random — удаляем её из всех остальных категорий
+    if (category === "random") {
+      Object.keys(draftCategories).forEach(cat => {
+        if (cat !== "random") {
+          draftCategories[cat] = draftCategories[cat].filter(t => t !== team);
+        }
+      });
+    }
+  }
+  document.getElementById("draft-round-label").textContent = "Round 1";
+
+  createRound2Button();
+
+});
+
+
+function createRound2Button() {
+  if (document.getElementById("to-round-2")) return;
+
+  const round2Btn = document.createElement("button");
+  round2Btn.id = "to-round-2";
+  round2Btn.textContent = "➡️ 2 Round";
+  round2Btn.style.marginTop = "30px";
+  round2Btn.className = "action-button";
+
+
+  document.getElementById("draft-stage-1").appendChild(round2Btn);
+
+  round2Btn.addEventListener("click", () => {
+    document.getElementById("draft-stage-1").classList.add("hidden");
+    const stage2 = document.getElementById("draft-stage-2");
+    stage2.classList.remove("hidden");
+
+    const effect = document.getElementById("generation-effect");
+    const cards = document.getElementById("card-choice");
+    cards.classList.add("hidden");
+    document.getElementById("draft-round-label").textContent = "Round 2 - Cards";
+
+
+    setTimeout(() => {
+      effect.classList.add("hidden");
+      cards.classList.remove("hidden");
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      
+
+      const selectedTeams = Array.from(document.querySelectorAll(".slot")).map(slot => slot.textContent);
+      shuffleArray(selectedTeams);
+
+      const container = document.getElementById("card-container");
+      container.innerHTML = "";
+
+      selectedTeams.forEach(team => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.dataset.team = team;
+        card.textContent = "❓";
+
+
+        card.addEventListener("click", () => {
+          // если уже выбрали 3, не даём больше кликать
+          const eliminated = document.querySelectorAll(".card.eliminated");
+          if (eliminated.length >= 3) return;
+        
+          // отмечаем карту как выброшенную
+          card.classList.add("eliminated");
+        
+          const updatedEliminated = document.querySelectorAll(".card.eliminated");
+          if (updatedEliminated.length === 3) {
+            // раскрываем ВСЕ карточки
+            document.querySelectorAll(".card").forEach(c => {
+              c.textContent = c.dataset.team;
+            });
+        
+            // показываем кнопку перехода к 3 раунду
+            document.getElementById("to-round-3").classList.remove("hidden");
+        
+            // отключаем все клики по карточкам
+            document.querySelectorAll(".card").forEach(c => {
+              c.style.pointerEvents = "none";
+            });
+          }
+        });
+        
+
+        container.appendChild(card);
+      });
+    }, 5000);
+  });
+}
+
+document.getElementById("to-round-3").addEventListener("click", () => {
+  document.getElementById("draft-round-label").textContent = "Round 3 - Case";
+
+  document.getElementById("draft-stage-2").classList.add("hidden");
+  document.getElementById("draft-stage-3").classList.remove("hidden");
+
+  const remaining = Array.from(document.querySelectorAll(".card"))
+    .filter(c => !c.classList.contains("eliminated"))
+    .map(c => c.dataset.team);
+
+  const caseStrip = document.getElementById("case-strip");
+  caseStrip.innerHTML = "";
+
+  // Повторяем команды чередуя их, чтобы создать длинную ленту
+  const tiles = [];
+// Делаем рандомную длинную череду из 2 команд
+for (let i = 0; i < 500; i++) {
+  const team = remaining[Math.floor(Math.random() * remaining.length)];
+  const tile = document.createElement("div");
+  tile.className = "case-tile";
+  tile.textContent = team;
+  tile.dataset.team = team;
+  caseStrip.appendChild(tile);
+}
+// переместим ленту на случайный старт
+const tileWidth = 156;
+const startIndex = Math.floor(Math.random() * 100);
+const current = startIndex * tileWidth;
+caseStrip.style.transform = `translateX(-${current}px)`;
+
+// сохраняем значение current глобально для скрипта
+window.caseStartOffset = current;
+
+
+});
+
+document.getElementById("open-case-button").addEventListener("click", () => {
+  const caseStrip = document.getElementById("case-strip");
+  const tileWidth = 156;
+
+
+  // случайная стартовая точка + случайный сдвиг
+  const startIndex = Math.floor(Math.random() * 200);
+  const randomOffset = Math.random() * tileWidth; // 0–155 пикселей
+
+  let current = startIndex * tileWidth + randomOffset;
+  caseStrip.style.transform = `translateX(-${current}px)`;
+
+  let velocity = 0;
+  let phase = "acceleration";
+  let timeElapsed = 0;
+  const intervalTime = 16;
+
+  const interval = setInterval(() => {
+    timeElapsed += intervalTime;
+
+    if (phase === "acceleration") {
+      velocity += 0.3;
+      if (timeElapsed >= 5000) {
+        phase = "constant";
+        timeElapsed = 0;
+      }
+    } else if (phase === "constant") {
+      if (timeElapsed >= 5000) {
+        phase = "deceleration";
+        timeElapsed = 0;
+      }
+    } else if (phase === "deceleration") {
+      velocity *= 0.985;
+      if (velocity < 0.4) {
+        clearInterval(interval);
+
+        // Определяем точный центр
+        const visibleWidth = document.getElementById("case-container").offsetWidth;
+        const centerOffset = current + visibleWidth / 2;
+
+        // Вычисляем ближайшую плитку
+        const rawIndex = centerOffset / tileWidth;
+        const winnerIndex = Math.round(rawIndex); // округляем до ближайшей
+
+        const winnerTile = caseStrip.children[winnerIndex];
+
+        if (winnerTile) {
+          const winnerName = winnerTile.dataset.team || winnerTile.textContent;
+          document.getElementById("case-winner-name").textContent = winnerName;
+          document.getElementById("case-winner").classList.remove("hidden");
+        } else {
+          document.getElementById("case-winner-name").textContent = "Ошибка";
+          document.getElementById("case-winner").classList.remove("hidden");
+        }
+
+        return;
+      }
+    }
+
+    current += velocity;
+    caseStrip.style.transform = `translateX(-${current}px)`;
+  }, intervalTime);
+});
+
+
+
+
+
+
+
+
 

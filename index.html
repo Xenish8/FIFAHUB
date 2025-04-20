@@ -27,8 +27,48 @@
     </div>
 
     <div id="draft-container" class="tab-section hidden">
-      <h2 class="section-title">РАЗДЕЛ DRAFT</h2>
-      <p>Тут будет содержимое драфта. Общий раздел для Андрея и Макса.</p>
+      <div id="draft-header">
+        <h1 class="draft-title">DRAFT</h1>
+        <h2 id="draft-round-label">Round 1 - Slots</h2>
+      </div>
+      
+      <div id="draft-stage-1">
+        <div class="slot-machine-container">
+          <div class="slot glow-green" data-category="random">—</div>
+          <div class="slot glow-blue" data-category="middle">—</div>
+          <div class="slot glow-orange" data-category="high">—</div>
+          <div class="slot glow-purple" data-category="top">—</div>
+          <div class="slot glow-red" data-category="legendary">—</div>
+          </div>
+    
+
+          <button id="spin-button" class="action-button">🎲 SPIN</button>
+
+      </div>
+
+      <div id="draft-stage-2" class="hidden">
+        <div id="generation-effect">⚙️ <span class="gen-text">GENERATION...</span></div>
+      
+        <div id="card-choice" class="hidden">
+          <h3 class="section-title">Выбери 3 команды, которые выбывают</h3>
+          <div id="card-container" class="card-grid"></div>
+          <button id="to-round-3" class="action-button hidden">➡️ 3 Round</button>
+
+        </div>
+      </div>
+      
+      <div id="draft-stage-3" class="hidden">
+        <div id="case-container">
+          <div id="case-strip"></div>
+          <div id="case-line"></div>
+        </div>
+        <button id="open-case-button" class="action-button">🔓 Открыть кейс</button>
+
+        <div id="case-winner" class="hidden">🏆 <span id="case-winner-name"></span></div>
+      </div>
+      
+      
+      
     </div>
     
     <div id="trophy-container" class="accordion-container">
