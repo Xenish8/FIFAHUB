@@ -19,12 +19,15 @@
       </div>
     
       <div class="button-row">
-        <button class="tab tab-trophy active" id="trophyTab">TROPHY</button>
+        <button class="tab tab-trophy" id="trophyTab">TROPHY</button>
         <button class="tab tab-statistics" id="statTab">STATISTICS</button>
-        <div id="draftTab" class="tab">DRAFT</div>
-
+      
+        <div class="tab-wrapper">
+          <div id="draftTab" class="tab">DRAFT</div>
+          <div id="infoTab" class="info-tab">ℹ️</div>
+        </div>
       </div>
-    </div>
+      
 
     <div id="draft-container" class="tab-section hidden">
       <div id="draft-header">
@@ -91,6 +94,156 @@
       
       
     </div>
+
+    <div id="info-container" class="tab-section hidden">
+      <h3 class="info-section-title">TEAM CATEGORIES</h3>
+
+      <div class="team-categories">
+        
+        <div class="team-block middle">
+          <h3>Middle Teams  28</h3>
+          <ul>
+            <li>Werder</li>
+            <li>Udinese</li>
+            <li>Celtic</li>
+            <li>Rangers</li>
+            <li>Yong Boys</li>
+            <li>Trabzonspor</li>
+            <li>AEK</li>
+            <li>Victoria Plzen</li>
+            <li>Sparta Praga</li>
+            <li>Slavia Praga</li>
+            <li>Shahtar</li>
+            <li>PAOK</li>
+            <li>Panathinaikos</li>
+            <li>Hajduk Split</li>
+            <li>Feyenoord</li>
+            <li>Dynamo Kiev</li>
+            <li>Dynamo Zagreb</li>
+            <li>Apoel</li>
+            <li>Salzburg</li>
+            <li>Brugge</li>
+            <li>Antwerp</li>
+            <li>Anderlecht</li>
+            <li>Copenhagen</li>
+            <li>Leeds Utd.</li>
+            <li>Southampton</li>
+            <li>Venezia</li>
+            <li>Twente</li>
+            <li>Steaua B.</li>
+          </ul>
+          </div>
+        
+    
+        <div class="team-block high">
+          <h3>High Teams 34</h3>
+          <ul>
+            <li>Crystal Palace</li>
+            <li>Everton</li>
+            <li>Nottingham F.</li>
+            <li>Wolwes</li>
+            <li>Monaco</li>
+            <li>Lille</li>
+            <li>Lion</li>
+            <li>O. Marselle</li>
+            <li>Lens</li>
+            <li>Gladbach</li>
+            <li>Union</li>
+            <li>Stuttgart</li>
+            <li>Wolfsburg</li>
+            <li>Frankfurt</li>
+            <li>Bologna</li>
+            <li>Fiorentina</li>
+            <li>Torino</li>
+            <li>Ajax</li>
+            <li>Feyenoord</li>
+            <li>PSV</li>
+            <li>Porto</li>
+            <li>Braga</li>
+            <li>Sporting</li>
+            <li>Celta</li>
+            <li>Mallorca</li>
+            <li>Betis</li>
+            <li>Valencia</li>
+            <li>Villareal</li>
+            <li>Besiktas</li>
+            <li>Fenerbahce</li>
+            <li>Galatasaray</li>
+            <li>Bournemouth</li>
+            <li>Brentford</li>
+            <li>Leicester</li>
+          </ul>
+        </div>
+    
+        <div class="team-block top">
+          <h3>Top Teams 20</h3>
+          <ul>
+            <li>SPURS</li>
+            <li>Westham Utd.</li>
+            <li>Aston Villa</li>
+            <li>Chelsea</li>
+            <li>Man. Utd</li>
+            <li>Newcastle</li>
+            <li>BVB</li>
+            <li>Bayer</li>
+            <li>Leipzig</li>
+            <li>Atalanta</li>
+            <li>Juventus</li>
+            <li>Lazio</li>
+            <li>Milan</li>
+            <li>Napoli</li>
+            <li>Roma</li>
+            <li>Benfica</li>
+            <li>AT. Bilbao</li>
+            <li>Girona</li>
+            <li>Sevilla</li>
+            <li>Real Sociedad</li>
+          </ul>
+        </div>
+    
+        <div class="team-block legendary">
+          <h3>Legendary 9</h3>
+          <ul>
+            <li>Liverpool</li>
+            <li>Man. City</li>
+            <li>Arsenal</li>
+            <li>PSG</li>
+            <li>Bayern</li>
+            <li>Inter</li>
+            <li>ATM</li>
+            <li>Barca</li>
+            <li>Real Madrid</li>
+          </ul>
+        </div>
+    
+      </div>
+
+<div class="probability-row">
+  <div class="probability-card green">
+    <h4>Random</h4>
+    <p>Each team: 1.10%</p>
+  </div>
+  <div class="probability-card blue">
+    <h4>Middle</h4>
+    <p>Each team: 3.57%</p>
+  </div>
+  <div class="probability-card yellow">
+    <h4>High</h4>
+    <p>Each team: 2.94%</p>
+  </div>
+  <div class="probability-card purple">
+    <h4>Top</h4>
+    <p>Each team: 5.00%</p>
+  </div>
+  <div class="probability-card red">
+    <h4>Legendary</h4>
+    <p>Each team: 11.11%</p>
+  </div>
+</div>
+      
+    </div>
+    
+    
     
     <div id="trophy-container" class="accordion-container">
       <!-- SUPERCUP -->
@@ -202,7 +355,7 @@
   </div>
 </div>
 -->
-
+<div class="accordion-container">
 <!-- WORLD CUP — MAKS -->
 <div class="accordion-container">
   <button class="accordion-header worldcup-header"><span class="accordion-title">World Cup</span></button>
@@ -228,6 +381,7 @@
   </div>
 </div>
 
+
 <!-- CHAMPIONS LEAGUE — MAKS -->
 <div class="accordion-container">
   <button class="accordion-header champions-header"><span class="accordion-title">Champions League</span></button>
@@ -251,6 +405,7 @@
     </div>
   </div>
 </div>
+</div>
 
 <div id="statistics-container" style="display: none;">
 <div id="andrey-stats" data-player="andrey">
@@ -258,35 +413,35 @@
   <!-- ВОТ СЮДА вставляешь -->
   <div class="stats-grid">
     <div class="stat-box">
-      <h3>Score</h3>
-      <p>55 трофеев</p>
+      <h3>🏆 Score</h3>
+      <p>55 trophies</p>
     </div>
     <div class="stat-box">
-      <h3>Max Streak</h3>
-      <p>6 побед подряд</p>
+      <h3>🔥 Max Streak</h3>
+      <p>x6</p>
     </div>
     <div class="stat-box">
-      <h3>Avg/Season</h3>
-      <p>9.1 трофея</p>
+      <h3>📈 Avg/Season</h3>
+      <p>9.1</p>
     </div>
     <div class="stat-box">
-      <h3>Best Team</h3>
-      <p>Real Madrid (14)</p>
+      <h3>⭐ Best Team</h3>
+      <p>Real Madrid - 14</p>
     </div>
   </div>
   
   <div class="stats-grid">
     <div class="stat-box">
       <h3>Best FIFA</h3>
-      <p>FIFA 24 (26 трофеев)</p>
+      <p>FIFA 24 (26)</p>
     </div>
     <div class="stat-box">
       <h3>Best Country</h3>
-      <p>Англия (4 трофея)</p>
+      <p>England (4)</p>
     </div>
     <div class="stat-box">
       <h3>Top 3 Teams</h3>
-      <p>Real (14), Bayern (6), Leipzig (5)</p>
+      <p>Real, Bayern, Leipzig</p>
       
     </div>
     <div class="stat-box">
@@ -396,34 +551,34 @@
   <div class="stats-grid">
     <div class="stat-box">
       <h3>🏆 Score</h3>
-      <p>19 трофеев</p>
+      <p>19 trophies</p>
     </div>
     <div class="stat-box">
-      <h3>🔥 Streak</h3>
-      <p>3 победы подряд</p>
+      <h3>🔥Max Streak</h3>
+      <p>x3</p>
     </div>
     <div class="stat-box">
       <h3>📈 Avg/Season</h3>
-      <p>4.75 трофея</p>
+      <p>4.75</p>
     </div>
     <div class="stat-box">
       <h3>⭐ Best Team</h3>
-      <p>Valencia (2)</p>
+      <p>Netherlands - 3</p>
     </div>
   </div>
 
   <div class="stats-grid">
     <div class="stat-box">
       <h3>Best FIFA</h3>
-      <p>FIFA 22 (5 трофеев)</p>
+      <p>FIFA 22 (5)</p>
     </div>
     <div class="stat-box">
       <h3>Best Country</h3>
-      <p>Нидерланды (3 трофея)</p>
+      <p>Netherlands (3)</p>
     </div>
     <div class="stat-box">
       <h3>Top 3 Teams</h3>
-      <p>Valencia (2), Milan (2), PSG (2)</p>
+      <p>Netherlands, Valencia, Milan</p>
     </div>
     <div class="stat-box">
       <h3>FIFA Seasons</h3>
@@ -526,8 +681,7 @@
   <div id="reroll-final-message"></div>
 </div>
 
-
-
+<script type="module" src="team_drop_chances.js"></script>
 <script type="module" src="caseSpinner.js"></script>
 <script type="module" src="script.js"></script>
 </body>

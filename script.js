@@ -51,6 +51,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const infoTab = document.getElementById("infoTab");
+const infoContainer = document.getElementById("info-container");
+
+infoTab.addEventListener("click", () => {
+  infoTab.classList.add("active");
+  draftTab.classList.remove("active");
+  trophyTab.classList.remove("active");
+  statTab.classList.remove("active");
+
+  draftContainer.style.display = "none";
+  trophyContainer.style.display = "none";
+  statsContainer.style.display = "none";
+  infoContainer.style.display = "block";
+
+  andreyStats.style.display = "none";
+  maksStats.style.display = "none";
+
+  // Скрываем аккордеоны
+  bodies.forEach(body => {
+    body.parentElement.style.display = "none";
+  });
+});
+
+
   // Кнопки игроков
   playerButtons.forEach(button => {
     button.addEventListener("click", () => {
@@ -77,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Показываем только нужную статистику
         trophyContainer.style.display = "none";
         statsContainer.style.display = "block";
+        infoContainer.style.display = "none";
+
   
         if (player === "andrey") {
           andreyStats.style.display = "block";
@@ -126,6 +152,8 @@ if (draftTab.classList.contains("active")) {
     trophyContainer.style.display = "none";
     statsContainer.style.display = "block";
     draftContainer.style.display = "none";
+    infoContainer.style.display = "none";
+
   
     const activePlayer = document.querySelector(".player-button.active").id;
     if (activePlayer === "andreyBtn") {
@@ -152,6 +180,8 @@ if (draftTab.classList.contains("active")) {
     trophyContainer.style.display = "block";
     statsContainer.style.display = "none";
     draftContainer.style.display = "none";
+    infoContainer.style.display = "none";
+
 
     const activePlayer = document.querySelector(".player-button.active").id;
     const player = activePlayer === "andreyBtn" ? "andrey" : "maks";
@@ -180,6 +210,8 @@ if (draftTab.classList.contains("active")) {
   
     andreyStats.style.display = "none";
     maksStats.style.display = "none";
+    infoContainer.style.display = "none";
+
 
       // Скрыть аккордеоны обоих игроков
   bodies.forEach(body => {
@@ -878,7 +910,7 @@ if (updatedSelected.length === 2) {
 
         container.appendChild(card);
       });
-    }, 5000);
+    }, 2000);
   });
 }
 
@@ -933,7 +965,9 @@ document.getElementById("open-case-button").addEventListener("click", () => {
     tileWidth: 156,
     draftCategories, // <-- ДОБАВИЛИ
     onWin: (winnerName) => {
-      document.getElementById("case-winner-name").textContent = winnerName;
+      const chance = dropChances[winnerName];
+      const chanceText = chance ? ` (Drop Chance: ${chance["Drop Chance %"].toFixed(2)}%)` : "";
+      document.getElementById("case-winner-name").textContent = `${winnerName}${chanceText}`;
       document.getElementById("case-winner").classList.remove("hidden");
     }
   });
@@ -970,6 +1004,13 @@ document.getElementById("restart-button").addEventListener("click", () => {
   resetRerollGame();
 });
 
+let dropChances = {};
+
+fetch("team_drop_chances.json")
+  .then(res => res.json())
+  .then(data => {
+    dropChances = data;
+  });
 
 
 
