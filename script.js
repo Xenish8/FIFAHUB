@@ -524,27 +524,214 @@ setInterval(showNextFactMaks, 3500);
 showNextFactMaks();
 
 const draftCategories = {
-  random: ["Real Madrid", "Barcelona", "PSG", "Japan", "Norway", "Benfica", "Lokomotiv", "Liverpool", "Galatasaray"],
-  middle: ["Japan", "Norway", "Belgium", "Switzerland", "Galatasaray"],
-  high: ["Liverpool", "Inter", "Ajax", "Benfica", "Atletico", "Leipzig"],
-  top: ["PSG", "Chelsea", "Barcelona", "Arsenal", "Napoli"],
-  legendary: ["Real Madrid", "Bayern", "AC Milan", "Manchester United", "Brazil", "France"]
+  random: [
+    { name: "Werder", logo: "werder.png" },
+    { name: "Udinese", logo: "udinese.png" },
+    { name: "Celtic", logo: "celtic.png" },
+    { name: "Rangers", logo: "rangers.png" },
+    { name: "Yong Boys", logo: "yong-boys.png" },
+    { name: "Trabzonspor", logo: "trabzonspor.png" },
+    { name: "AEK", logo: "aek.png" },
+    { name: "Victoria Plzen", logo: "victoria-plzen.png" },
+    { name: "Sparta Praga", logo: "sparta-praga.png" },
+    { name: "Slavia Praga", logo: "slavia-praga.png" },
+    { name: "Shahtar", logo: "shahtar.png" },
+    { name: "PAOK", logo: "paok.png" },
+    { name: "Panathinaikos", logo: "panathinaikos.png" },
+    { name: "Hajduk Split", logo: "hajduk-split.png" },
+    { name: "Feyenoord", logo: "feyenoord.png" },
+    { name: "Dynamo Kiev", logo: "dynamo-kiev.png" },
+    { name: "Dynamo Zagreb", logo: "dynamo-zagreb.png" },
+    { name: "Apoel", logo: "apoel.png" },
+    { name: "Salzburg", logo: "salzburg.png" },
+    { name: "Brugge", logo: "brugge.png" },
+    { name: "Antwerp", logo: "antwerp.png" },
+    { name: "Anderlecht", logo: "anderlecht.png" },
+    { name: "Copenhagen", logo: "copenhagen.png" },
+    { name: "Leeds Utd.", logo: "leeds-utd.png" },
+    { name: "Southampton", logo: "southampton.png" },
+    { name: "Venezia", logo: "venezia.png" },
+    { name: "Twente", logo: "twente.png" },
+    { name: "Steaua B.", logo: "steaua-b.png" },
+    { name: "Crystal Palace", logo: "crystal-palace.png" },
+    { name: "Everton", logo: "everton.png" },
+    { name: "Nottingham F.", logo: "nottingham-f.png" },
+    { name: "Wolwes", logo: "wolwes.png" },
+    { name: "Monaco", logo: "monaco.png" },
+    { name: "Lille", logo: "lille.png" },
+    { name: "Lion", logo: "lion.png" },
+    { name: "O. Marselle", logo: "o-marselle.png" },
+    { name: "Lens", logo: "lens.png" },
+    { name: "Gladbach", logo: "gladbach.png" },
+    { name: "Union", logo: "union.png" },
+    { name: "Stuttgart", logo: "stuttgart.png" },
+    { name: "Wolfsburg", logo: "wolfsburg.png" },
+    { name: "Frankfurt", logo: "frankfurt.png" },
+    { name: "Bologna", logo: "bologna.png" },
+    { name: "Fiorentina", logo: "fiorentina.png" },
+    { name: "Torino", logo: "torino.png" },
+    { name: "Ajax", logo: "ajax.png" },
+    { name: "Feyenoord", logo: "feyenoord.png" },
+    { name: "PSV", logo: "psv.png" },
+    { name: "Porto", logo: "porto.png" },
+    { name: "Braga", logo: "braga.png" },
+    { name: "Sporting", logo: "sporting.png" },
+    { name: "Celta", logo: "celta.png" },
+    { name: "Mallorca", logo: "mallorca.png" },
+    { name: "Betis", logo: "betis.png" },
+    { name: "Valencia", logo: "valencia.png" },
+    { name: "Villareal", logo: "villareal.png" },
+    { name: "Besiktas", logo: "besiktas.png" },
+    { name: "Fenerbahce", logo: "fenerbahce.png" },
+    { name: "Galatasaray", logo: "galatasaray.png" },
+    { name: "Bournemouth", logo: "bournemouth.png" },
+    { name: "Brentford", logo: "brentford.png" },
+    { name: "Leicester", logo: "leicester.png" },
+    { name: "SPURS", logo: "spurs.png" },
+    { name: "Westham Utd.", logo: "westham-utd.png" },
+    { name: "Aston Villa", logo: "aston-villa.png" },
+    { name: "Chelsea", logo: "chelsea.png" },
+    { name: "Man. Utd", logo: "man-utd.png" },
+    { name: "Newcastle", logo: "newcastle.png" },
+    { name: "BVB", logo: "bvb.png" },
+    { name: "Bayer", logo: "bayer.png" },
+    { name: "Leipzig", logo: "leipzig.png" },
+    { name: "Atalanta", logo: "atalanta.png" },
+    { name: "Juventus", logo: "juventus.png" },
+    { name: "Lazio", logo: "lazio.png" },
+    { name: "Milan", logo: "milan.png" },
+    { name: "Napoli", logo: "napoli.png" },
+    { name: "Roma", logo: "roma.png" },
+    { name: "Benfica", logo: "benfica.png" },
+    { name: "AT. Bilbao", logo: "at-bilbao.png" },
+    { name: "Girona", logo: "girona.png" },
+    { name: "Sevilla", logo: "sevilla.png" },
+    { name: "Real Sociedad", logo: "real-sociedad.png" },
+    { name: "Liverpool", logo: "liverpool.png" },
+    { name: "Man. City", logo: "man-city.png" },
+    { name: "Arsenal", logo: "arsenal.png" },
+    { name: "PSG", logo: "psg.png" },
+    { name: "Bayern", logo: "bayern.png" },
+    { name: "Inter", logo: "inter.png" },
+    { name: "ATM", logo: "atm.png" },
+    { name: "Barca", logo: "barca.png" },
+    { name: "Real Madrid", logo: "real-madrid.png" }
+
+
+  ],
+  middle: [
+    { name: "Werder", logo: "werder.png" },
+    { name: "Udinese", logo: "udinese.png" },
+    { name: "Celtic", logo: "celtic.png" },
+    { name: "Rangers", logo: "rangers.png" },
+    { name: "Yong Boys", logo: "yong-boys.png" },
+    { name: "Trabzonspor", logo: "trabzonspor.png" },
+    { name: "AEK", logo: "aek.png" },
+    { name: "Victoria Plzen", logo: "victoria-plzen.png" },
+    { name: "Sparta Praga", logo: "sparta-praga.png" },
+    { name: "Slavia Praga", logo: "slavia-praga.png" },
+    { name: "Shahtar", logo: "shahtar.png" },
+    { name: "PAOK", logo: "paok.png" },
+    { name: "Panathinaikos", logo: "panathinaikos.png" },
+    { name: "Hajduk Split", logo: "hajduk-split.png" },
+    { name: "Feyenoord", logo: "feyenoord.png" },
+    { name: "Dynamo Kiev", logo: "dynamo-kiev.png" },
+    { name: "Dynamo Zagreb", logo: "dynamo-zagreb.png" },
+    { name: "Apoel", logo: "apoel.png" },
+    { name: "Salzburg", logo: "salzburg.png" },
+    { name: "Brugge", logo: "brugge.png" },
+    { name: "Antwerp", logo: "antwerp.png" },
+    { name: "Anderlecht", logo: "anderlecht.png" },
+    { name: "Copenhagen", logo: "copenhagen.png" },
+    { name: "Leeds Utd.", logo: "leeds-utd.png" },
+    { name: "Southampton", logo: "southampton.png" },
+    { name: "Venezia", logo: "venezia.png" },
+    { name: "Twente", logo: "twente.png" },
+    { name: "Steaua B.", logo: "steaua-b.png" }
+  ],
+  high: [
+    { name: "Crystal Palace", logo: "crystal-palace.png" },
+    { name: "Everton", logo: "everton.png" },
+    { name: "Nottingham F.", logo: "nottingham-f.png" },
+    { name: "Wolwes", logo: "wolwes.png" },
+    { name: "Monaco", logo: "monaco.png" },
+    { name: "Lille", logo: "lille.png" },
+    { name: "Lion", logo: "lion.png" },
+    { name: "O. Marselle", logo: "o-marselle.png" },
+    { name: "Lens", logo: "lens.png" },
+    { name: "Gladbach", logo: "gladbach.png" },
+    { name: "Union", logo: "union.png" },
+    { name: "Stuttgart", logo: "stuttgart.png" },
+    { name: "Wolfsburg", logo: "wolfsburg.png" },
+    { name: "Frankfurt", logo: "frankfurt.png" },
+    { name: "Bologna", logo: "bologna.png" },
+    { name: "Fiorentina", logo: "fiorentina.png" },
+    { name: "Torino", logo: "torino.png" },
+    { name: "Ajax", logo: "ajax.png" },
+    { name: "Feyenoord", logo: "feyenoord.png" },
+    { name: "PSV", logo: "psv.png" },
+    { name: "Porto", logo: "porto.png" },
+    { name: "Braga", logo: "braga.png" },
+    { name: "Sporting", logo: "sporting.png" },
+    { name: "Celta", logo: "celta.png" },
+    { name: "Mallorca", logo: "mallorca.png" },
+    { name: "Betis", logo: "betis.png" },
+    { name: "Valencia", logo: "valencia.png" },
+    { name: "Villareal", logo: "villareal.png" },
+    { name: "Besiktas", logo: "besiktas.png" },
+    { name: "Fenerbahce", logo: "fenerbahce.png" },
+    { name: "Galatasaray", logo: "galatasaray.png" },
+    { name: "Bournemouth", logo: "bournemouth.png" },
+    { name: "Brentford", logo: "brentford.png" },
+    { name: "Leicester", logo: "leicester.png" }
+  ],
+  top: [
+    { name: "SPURS", logo: "spurs.png" },
+    { name: "Westham Utd.", logo: "westham-utd.png" },
+    { name: "Aston Villa", logo: "aston-villa.png" },
+    { name: "Chelsea", logo: "chelsea.png" },
+    { name: "Man. Utd", logo: "man-utd.png" },
+    { name: "Newcastle", logo: "newcastle.png" },
+    { name: "BVB", logo: "bvb.png" },
+    { name: "Bayer", logo: "bayer.png" },
+    { name: "Leipzig", logo: "leipzig.png" },
+    { name: "Atalanta", logo: "atalanta.png" },
+    { name: "Juventus", logo: "juventus.png" },
+    { name: "Lazio", logo: "lazio.png" },
+    { name: "Milan", logo: "milan.png" },
+    { name: "Napoli", logo: "napoli.png" },
+    { name: "Roma", logo: "roma.png" },
+    { name: "Benfica", logo: "benfica.png" },
+    { name: "AT. Bilbao", logo: "at-bilbao.png" },
+    { name: "Girona", logo: "girona.png" },
+    { name: "Sevilla", logo: "sevilla.png" },
+    { name: "Real Sociedad", logo: "real-sociedad.png" }
+  ],
+  legendary: [
+    { name: "Liverpool", logo: "liverpool.png" },
+    { name: "Man. City", logo: "man-city.png" },
+    { name: "Arsenal", logo: "arsenal.png" },
+    { name: "PSG", logo: "psg.png" },
+    { name: "Bayern", logo: "bayern.png" },
+    { name: "Inter", logo: "inter.png" },
+    { name: "ATM", logo: "atm.png" },
+    { name: "Barca", logo: "barca.png" },
+    { name: "Real Madrid", logo: "real-madrid.png" }
+  ]
 };
 
+
 document.getElementById("spin-button").addEventListener("click", async () => {
-
   const spinAudio = document.getElementById("spin-sound");
-if (spinAudio) {
-  try {
-    spinAudio.currentTime = 0;
-    await spinAudio.play();
-  } catch (err) {
-    console.warn("Звук не воспроизвёлся:", err);
+  if (spinAudio) {
+    try {
+      spinAudio.currentTime = 0;
+      await spinAudio.play();
+    } catch (err) {
+      console.warn("Звук не воспроизвёлся:", err);
+    }
   }
-}
 
-  
-  
   const slots = document.querySelectorAll(".slot");
 
   // Обнуляем все слоты
@@ -558,52 +745,37 @@ if (spinAudio) {
   for (let i = 0; i < slots.length; i++) {
     const slot = slots[i];
     const category = slot.dataset.category;
-  
-    // Копируем список команд этой категории
+
     let availableTeams = [...draftCategories[category]];
-  
-    // Исключаем уже выпавшие команды
-    availableTeams = availableTeams.filter(team => !usedTeams.includes(team));
-  
-    // Специально: если это НЕ random — удалим команду, выпавшую в random позже
-    if (i === 0 && category === "random") {
-      // Просто крутим Random пока
-    } else {
-      // Если вдруг после фильтра ничего не осталось
-      if (availableTeams.length === 0) {
-        slot.textContent = "⚠️ No teams";
-        continue;
-      }
+
+    // убираем команды, которые уже выпали
+    availableTeams = availableTeams.filter(team => !usedTeams.includes(team.name));
+
+    if (availableTeams.length === 0) {
+      slot.textContent = "⚠️ No teams";
+      continue;
     }
-  
-    // Анимация
+
+    // Визуальная загрузка
     slot.classList.add("spin");
-    slot.textContent = "⏳";
-  
+    slot.innerHTML = `<span class="spinning">⏳</span>`;
+
     await new Promise(resolve => setTimeout(resolve, 3000));
-  
-    // Остановка
+
     slot.classList.remove("spin");
-  
+
     const team = availableTeams[Math.floor(Math.random() * availableTeams.length)];
-    slot.textContent = team;
-  
-    // Добавляем в список использованных
-    usedTeams.push(team);
-  
-    // Если это random — удаляем её из всех остальных категорий
-    if (category === "random") {
-      Object.keys(draftCategories).forEach(cat => {
-        if (cat !== "random") {
-          draftCategories[cat] = draftCategories[cat].filter(t => t !== team);
-        }
-      });
-    }
+
+    slot.innerHTML = `
+      <img src="assets/${team.logo}" alt="${team.name}" class="team-logo">
+      <span class="team-name">${team.name}</span>
+    `;
+    
+    usedTeams.push(team.name);
   }
+
   document.getElementById("draft-round-label").textContent = "Round 1";
-
   createRound2Button();
-
 });
 
 
@@ -644,7 +816,11 @@ function createRound2Button() {
       }
       
 
-      const selectedTeams = Array.from(document.querySelectorAll(".slot")).map(slot => slot.textContent);
+      const selectedTeams = Array.from(document.querySelectorAll(".slot")).map(slot => {
+        const teamName = slot.querySelector(".team-name")?.textContent || slot.textContent;
+        return Object.values(draftCategories).flat().find(t => t.name === teamName);
+      });
+      
       shuffleArray(selectedTeams);
 
       const container = document.getElementById("card-container");
@@ -653,10 +829,8 @@ function createRound2Button() {
       selectedTeams.forEach(team => {
         const card = document.createElement("div");
         card.className = "card";
-        card.dataset.team = team;
-        card.textContent = "❓";
-
-
+        card.dataset.team = team.name;
+        card.innerHTML = `<span class="hidden-team">❓</span>`;
         card.addEventListener("click", () => {
           // если уже выбрали 3, не даём больше кликать
   // если уже выбрали 2 — не даём больше выбирать
@@ -671,12 +845,25 @@ const updatedSelected = document.querySelectorAll(".card.selected");
 if (updatedSelected.length === 2) {
   // раскрываем ВСЕ карточки
   document.querySelectorAll(".card").forEach(c => {
-    c.textContent = c.dataset.team;
+    const teamName = c.dataset.team;
+    const teamData = Object.values(draftCategories).flat().find(t => t.name === teamName);
+  
+    if (teamData) {
+      c.innerHTML = `
+        <img src="assets/${teamData.logo}" alt="${teamData.name}" class="team-logo">
+        <span class="team-name">${teamData.name}</span>
+      `;
+    } else {
+      c.textContent = teamName;
+    }
+  
     if (!c.classList.contains("selected")) {
       c.classList.add("eliminated");
     }
-    c.style.pointerEvents = "none"; // отключаем клик
+  
+    c.style.pointerEvents = "none";
   });
+  
 
   // показываем кнопку 3 раунда
   document.getElementById("to-round-3").classList.remove("hidden");
@@ -717,8 +904,15 @@ document.getElementById("to-round-3").addEventListener("click", () => {
     const team = remaining[Math.floor(Math.random() * remaining.length)];
     const tile = document.createElement("div");
     tile.className = "case-tile";
-    tile.textContent = team;
-    tile.dataset.team = team;
+    const teamData = Object.values(draftCategories).flat().find(t => t.name === team) || { name: team, logo: "default.png" };
+
+    tile.innerHTML = `
+      <img src="assets/${teamData.logo}" alt="${teamData.name}" class="team-logo">
+      <span class="team-name">${teamData.name}</span>
+    `;
+    
+    tile.dataset.team = teamData.name;
+    
     tiles.push(tile);
     caseStrip.appendChild(tile);
   }
@@ -737,11 +931,13 @@ document.getElementById("open-case-button").addEventListener("click", () => {
     containerId: "case-container",
     stripId: "case-strip",
     tileWidth: 156,
+    draftCategories, // <-- ДОБАВИЛИ
     onWin: (winnerName) => {
       document.getElementById("case-winner-name").textContent = winnerName;
       document.getElementById("case-winner").classList.remove("hidden");
     }
   });
+  
 });
 
 document.getElementById("restart-button").addEventListener("click", () => {

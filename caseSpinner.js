@@ -1,9 +1,11 @@
 export function startCaseSpin({
-    containerId,
-    stripId,
-    tileWidth = 156,
-    onWin = () => {}
-  }) {
+  containerId,
+  stripId,
+  tileWidth = 156,
+  draftCategories,  // <-- ДОБАВИЛИ
+  onWin = () => {}
+}) {
+
     const container = document.getElementById(containerId);
     const strip = document.getElementById(stripId);
     const screenWidth = container.offsetWidth;
@@ -18,13 +20,26 @@ export function startCaseSpin({
     strip.innerHTML = "";
   
     for (let i = 0; i < totalTiles; i++) {
-      const team = remaining[Math.floor(Math.random() * remaining.length)];
+      const teamName = remaining[Math.floor(Math.random() * remaining.length)];
       const tile = document.createElement("div");
       tile.className = "case-tile";
-      tile.textContent = team;
-      tile.dataset.team = team;
+    
+      const teamObj = Object.values(draftCategories).flat().find(t => t.name === teamName);
+    
+      if (teamObj && teamObj.logo) {
+        tile.innerHTML = `
+          <img src="assets/${teamObj.logo}" alt="${teamObj.name}" class="team-logo">
+          <span class="team-name">${teamObj.name}</span>
+        `;
+        tile.dataset.team = teamObj.name;
+      } else {
+        tile.textContent = teamName || "❓";
+        tile.dataset.team = teamName || "Unknown";
+      }
+    
       strip.appendChild(tile);
     }
+    
   
   // 🎲 Рандомный микросдвиг (сдвиг вперёд до 1 плитки)
   const initialOffset = Math.random() * tileWidth;
