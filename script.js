@@ -748,7 +748,17 @@ const draftCategories = {
     { name: "Inter", logo: "inter.png" },
     { name: "ATM", logo: "atm.png" },
     { name: "Barca", logo: "barca.png" },
-    { name: "Real Madrid", logo: "real-madrid.png" }
+    { name: "Real Madrid", logo: "real-madrid.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" },
+    { name: "Empty 😔", logo: "none.png" }
   ]
 };
 
