@@ -638,7 +638,7 @@ const draftCategories = {
     { name: "O. Marselle", logo: "o-marselle.png" },
     { name: "Bournemouth", logo: "bournemouth.png" },
     { name: "Brentford", logo: "brentford.png" },
-    { name: "brighton", logo: "brighton.png" },
+    { name: "Brighton", logo: "brighton.png" },
     { name: "Crystal Palace", logo: "crystal-palace.png" },
     { name: "Everton", logo: "everton.png" },
     { name: "Fulham", logo: "fulham.png" },
