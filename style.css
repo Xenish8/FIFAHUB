@@ -1026,22 +1026,6 @@ h1 {
   100% { transform: rotateX(360deg); }
 }
 
-#spin-button {
-  background: #00ffff;
-  color: black;
-  font-size: 18px;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-weight: bold;
-}
-
-#spin-button:hover {
-  background: #00cccc;
-  transform: scale(1.05);
-}
 
 .slot-wrapper {
   display: flex;
@@ -2288,5 +2272,201 @@ h1 {
   }
   50% {
     box-shadow: 0 0 20px rgba(255, 105, 180, 1);
+  }
+}
+
+
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-size: 22px;
+}
+
+.full-star {
+  color: gold;
+}
+
+.half-star {
+  color: gold;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 15px; /* половина ширины звезды */
+}
+.half-star::before {
+  content: "⭐";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+#spin-button {
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  padding: 12px 24px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: #00ffff;
+  color: black;
+  box-shadow: 0 0 12px rgba(0,255,255,0.5);
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: block; /* ВАЖНО — блочный элемент */
+  text-align: center;
+}
+
+#spin-button:hover {
+  background: #00cccc;
+}
+
+
+/* 🔥 Анимация для обратного отсчёта */
+@keyframes countdownFade {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.countdown-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+  animation: countdownFade 1s forwards;
+}
+
+@keyframes countdownFade {
+  0% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.countdown-number {
+  font-size: 100px; /* 🔥 БОЛЬШИЕ ЦИФРЫ */
+  font-weight: bold;
+  animation: countdownFade 1s forwards;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+
+/* Цвета для каждой цифры */
+.countdown-3 {
+  color: #00ffff; /* Голубой */
+  text-shadow: 0 0 15px #00ffff;
+}
+.countdown-2 {
+  color: #ffcc00; /* Жёлтый */
+  text-shadow: 0 0 15px #ffcc00;
+}
+.countdown-1 {
+  color: #ff4444; /* Красный */
+  text-shadow: 0 0 15px #ff4444;
+}
+
+/* Плавное проявление для ЛОГОТИПА */
+.team-logo-appear {
+  animation: teamFadeIn 1.5s ease forwards;
+}
+
+/* Плавное проявление для НАЗВАНИЯ команды */
+.team-name-appear {
+  animation: teamFadeIn 1.5s ease forwards;
+}
+
+/* Анимация */
+@keyframes teamFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Лёгкая вспышка при появлении логотипа */
+@keyframes logoFlash {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: brightness(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Класс для логотипа с лёгкой вспышкой */
+.team-logo-appear {
+  animation: logoFlash 1.5s ease forwards;
+}
+
+/* Появление карточек с лёгким вылетом */
+.card-appear {
+  animation: cardFlyIn 0.6s ease forwards;
+}
+
+@keyframes cardFlyIn {
+  0% {
+    transform: translateY(50px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Перемешивание карточек */
+.card-shuffle {
+  animation: cardShuffle 0.8s ease forwards;
+}
+
+@keyframes cardShuffle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

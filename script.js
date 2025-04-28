@@ -557,145 +557,52 @@ showNextFactMaks();
 
 const draftCategories = {
   random: [
-    { name: "Werder", logo: "werder.png" },
+    { name: "Southampton", logo: "southampton.png" },
     { name: "Udinese", logo: "udinese.png" },
-    { name: "Celtic", logo: "celtic.png" },
+    { name: "Venezia", logo: "venezia.png" },
     { name: "Rangers", logo: "rangers.png" },
-    { name: "Yong Boys", logo: "yong-boys.png" },
-    { name: "Trabzonspor", logo: "trabzonspor.png" },
-    { name: "AEK", logo: "aek.png" },
-    { name: "Victoria Plzen", logo: "victoria-plzen.png" },
+    { name: "Dynamo Zagreb", logo: "dynamo-zagreb.png" },
+    { name: "Dynamo Kiev", logo: "dynamo-kiev.png" },
+    { name: "Ferencvárosi", logo: "ferencvarosh.png" },
+    { name: "Panathinaikos", logo: "panathinaikos.png" },
+    { name: "PAOK", logo: "paok.png" },
+    { name: "Shahtar", logo: "shahtar.png" },
     { name: "Sparta Praga", logo: "sparta-praga.png" },
     { name: "Slavia Praga", logo: "slavia-praga.png" },
-    { name: "Shahtar", logo: "shahtar.png" },
-    { name: "PAOK", logo: "paok.png" },
-    { name: "Panathinaikos", logo: "panathinaikos.png" },
-    { name: "Hajduk Split", logo: "hajduk-split.png" },
-    { name: "Feyenoord", logo: "feyenoord.png" },
-    { name: "Dynamo Kiev", logo: "dynamo-kiev.png" },
-    { name: "Dynamo Zagreb", logo: "dynamo-zagreb.png" },
-    { name: "Apoel", logo: "apoel.png" },
+    { name: "Victoria Plzen", logo: "victoria-plzen.png" },
     { name: "Salzburg", logo: "salzburg.png" },
     { name: "Brugge", logo: "brugge.png" },
     { name: "Antwerp", logo: "antwerp.png" },
     { name: "Anderlecht", logo: "anderlecht.png" },
     { name: "Copenhagen", logo: "copenhagen.png" },
-    { name: "Leeds Utd.", logo: "leeds-utd.png" },
-    { name: "Southampton", logo: "southampton.png" },
-    { name: "Venezia", logo: "venezia.png" },
-    { name: "Twente", logo: "twente.png" },
-    { name: "Steaua B.", logo: "steaua-b.png" },
-    { name: "Crystal Palace", logo: "crystal-palace.png" },
-    { name: "Everton", logo: "everton.png" },
-    { name: "Nottingham F.", logo: "nottingham-f.png" },
-    { name: "Wolwes", logo: "wolwes.png" },
-    { name: "Monaco", logo: "monaco.png" },
-    { name: "Lille", logo: "lille.png" },
-    { name: "Lion", logo: "lion.png" },
-    { name: "O. Marselle", logo: "o-marselle.png" },
-    { name: "Lens", logo: "lens.png" },
-    { name: "Gladbach", logo: "gladbach.png" },
-    { name: "Union", logo: "union.png" },
-    { name: "Stuttgart", logo: "stuttgart.png" },
-    { name: "Wolfsburg", logo: "wolfsburg.png" },
-    { name: "Frankfurt", logo: "frankfurt.png" },
-    { name: "Bologna", logo: "bologna.png" },
-    { name: "Fiorentina", logo: "fiorentina.png" },
-    { name: "Torino", logo: "torino.png" },
-    { name: "Ajax", logo: "ajax.png" },
-    { name: "Feyenoord", logo: "feyenoord.png" },
-    { name: "PSV", logo: "psv.png" },
-    { name: "Porto", logo: "porto.png" },
     { name: "Braga", logo: "braga.png" },
-    { name: "Sporting", logo: "sporting.png" },
-    { name: "Celta", logo: "celta.png" },
-    { name: "Mallorca", logo: "mallorca.png" },
-    { name: "Betis", logo: "betis.png" },
-    { name: "Valencia", logo: "valencia.png" },
-    { name: "Villareal", logo: "villareal.png" },
-    { name: "Besiktas", logo: "besiktas.png" },
-    { name: "Fenerbahce", logo: "fenerbahce.png" },
-    { name: "Galatasaray", logo: "galatasaray.png" },
-    { name: "Bournemouth", logo: "bournemouth.png" },
-    { name: "Brentford", logo: "brentford.png" },
-    { name: "Leicester", logo: "leicester.png" },
-    { name: "SPURS", logo: "spurs.png" },
-    { name: "Westham Utd.", logo: "westham-utd.png" },
-    { name: "Aston Villa", logo: "aston-villa.png" },
-    { name: "Chelsea", logo: "chelsea.png" },
-    { name: "Man. Utd", logo: "man-utd.png" },
-    { name: "Newcastle", logo: "newcastle.png" },
-    { name: "BVB", logo: "bvb.png" },
-    { name: "Bayer", logo: "bayer.png" },
-    { name: "Leipzig", logo: "leipzig.png" },
-    { name: "Atalanta", logo: "atalanta.png" },
-    { name: "Juventus", logo: "juventus.png" },
-    { name: "Lazio", logo: "lazio.png" },
-    { name: "Milan", logo: "milan.png" },
-    { name: "Napoli", logo: "napoli.png" },
-    { name: "Roma", logo: "roma.png" },
-    { name: "Benfica", logo: "benfica.png" },
-    { name: "AT. Bilbao", logo: "at-bilbao.png" },
-    { name: "Girona", logo: "girona.png" },
-    { name: "Sevilla", logo: "sevilla.png" },
-    { name: "Real Sociedad", logo: "real-sociedad.png" },
-    { name: "Liverpool", logo: "liverpool.png" },
-    { name: "Man. City", logo: "man-city.png" },
-    { name: "Arsenal", logo: "arsenal.png" },
-    { name: "PSG", logo: "psg.png" },
-    { name: "Bayern", logo: "bayern.png" },
-    { name: "Inter", logo: "inter.png" },
-    { name: "ATM", logo: "atm.png" },
-    { name: "Barca", logo: "barca.png" },
-    { name: "Real Madrid", logo: "real-madrid.png" }
-
-
-  ],
-  middle: [
-    { name: "Werder", logo: "werder.png" },
-    { name: "Udinese", logo: "udinese.png" },
-    { name: "Celtic", logo: "celtic.png" },
-    { name: "Rangers", logo: "rangers.png" },
-    { name: "Yong Boys", logo: "yong-boys.png" },
-    { name: "Trabzonspor", logo: "trabzonspor.png" },
-    { name: "AEK", logo: "aek.png" },
-    { name: "Victoria Plzen", logo: "victoria-plzen.png" },
-    { name: "Sparta Praga", logo: "sparta-praga.png" },
-    { name: "Slavia Praga", logo: "slavia-praga.png" },
-    { name: "Shahtar", logo: "shahtar.png" },
-    { name: "PAOK", logo: "paok.png" },
-    { name: "Panathinaikos", logo: "panathinaikos.png" },
-    { name: "Hajduk Split", logo: "hajduk-split.png" },
-    { name: "Feyenoord", logo: "feyenoord.png" },
-    { name: "Dynamo Kiev", logo: "dynamo-kiev.png" },
-    { name: "Dynamo Zagreb", logo: "dynamo-zagreb.png" },
-    { name: "Apoel", logo: "apoel.png" },
-    { name: "Salzburg", logo: "salzburg.png" },
-    { name: "Brugge", logo: "brugge.png" },
-    { name: "Antwerp", logo: "antwerp.png" },
-    { name: "Anderlecht", logo: "anderlecht.png" },
-    { name: "Copenhagen", logo: "copenhagen.png" },
-    { name: "Leeds Utd.", logo: "leeds-utd.png" },
-    { name: "Southampton", logo: "southampton.png" },
-    { name: "Venezia", logo: "venezia.png" },
-    { name: "Twente", logo: "twente.png" },
     { name: "Steaua B.", logo: "steaua-b.png" }
   ],
-  high: [
-    { name: "Crystal Palace", logo: "crystal-palace.png" },
-    { name: "Everton", logo: "everton.png" },
-    { name: "Nottingham F.", logo: "nottingham-f.png" },
-    { name: "Wolwes", logo: "wolwes.png" },
+  middle: [
     { name: "Monaco", logo: "monaco.png" },
     { name: "Lille", logo: "lille.png" },
-    { name: "Lion", logo: "lion.png" },
+    { name: "OGC Nice", logo: "nice.png" },
+    { name: "Lyon", logo: "lion.png" },
     { name: "O. Marselle", logo: "o-marselle.png" },
-    { name: "Lens", logo: "lens.png" },
-    { name: "Gladbach", logo: "gladbach.png" },
-    { name: "Union", logo: "union.png" },
-    { name: "Stuttgart", logo: "stuttgart.png" },
-    { name: "Wolfsburg", logo: "wolfsburg.png" },
+    { name: "Bournemouth", logo: "bournemouth.png" },
+    { name: "Brentford", logo: "brentford.png" },
+    { name: "brighton", logo: "brighton.png" },
+    { name: "Crystal Palace", logo: "crystal-palace.png" },
+    { name: "Everton", logo: "everton.png" },
+    { name: "Fulham", logo: "fulham.png" },
+    { name: "Leicester", logo: "leicester.png" },
+    { name: "Nottingham F.", logo: "nottingham-f.png" },
+    { name: "Westham Utd.", logo: "westham-utd.png" },
+    { name: "Wolwes", logo: "wolwes.png" },
     { name: "Frankfurt", logo: "frankfurt.png" },
+    { name: "Gladbach", logo: "gladbach.png" },
+    { name: "Werder", logo: "werder.png" },
+    { name: "Stuttgart", logo: "stuttgart.png" },
+    { name: "Hoffenheim", logo: "hoffenheim.png" },
+    { name: "Lens", logo: "lens.png" }
+  ],
+  high: [
+    { name: "Wolfsburg", logo: "wolfsburg.png" },
     { name: "Bologna", logo: "bologna.png" },
     { name: "Fiorentina", logo: "fiorentina.png" },
     { name: "Torino", logo: "torino.png" },
@@ -703,29 +610,28 @@ const draftCategories = {
     { name: "Feyenoord", logo: "feyenoord.png" },
     { name: "PSV", logo: "psv.png" },
     { name: "Porto", logo: "porto.png" },
-    { name: "Braga", logo: "braga.png" },
-    { name: "Sporting", logo: "sporting.png" },
+    { name: "Celtic", logo: "celtic.png" },
+    { name: "Osasuna", logo: "osasuna.png" },
     { name: "Celta", logo: "celta.png" },
-    { name: "Mallorca", logo: "mallorca.png" },
+    { name: "Girona", logo: "girona.png" },
     { name: "Betis", logo: "betis.png" },
+    { name: "Real Sociedad", logo: "real-sociedad.png" },
+    { name: "Mallorca", logo: "mallorca.png" },
     { name: "Valencia", logo: "valencia.png" },
     { name: "Villareal", logo: "villareal.png" },
+    { name: "Sevilla", logo: "sevilla.png" },
+    { name: "Trabzonspor", logo: "trabzonspor.png" },
+    { name: "AEK", logo: "aek.png" },
     { name: "Besiktas", logo: "besiktas.png" },
-    { name: "Fenerbahce", logo: "fenerbahce.png" },
-    { name: "Galatasaray", logo: "galatasaray.png" },
-    { name: "Bournemouth", logo: "bournemouth.png" },
-    { name: "Brentford", logo: "brentford.png" },
-    { name: "Leicester", logo: "leicester.png" }
+    { name: "Olympiacos", logo: "olympiacos.png" }
   ],
   top: [
     { name: "SPURS", logo: "spurs.png" },
-    { name: "Westham Utd.", logo: "westham-utd.png" },
     { name: "Aston Villa", logo: "aston-villa.png" },
     { name: "Chelsea", logo: "chelsea.png" },
     { name: "Man. Utd", logo: "man-utd.png" },
     { name: "Newcastle", logo: "newcastle.png" },
     { name: "BVB", logo: "bvb.png" },
-    { name: "Bayer", logo: "bayer.png" },
     { name: "Leipzig", logo: "leipzig.png" },
     { name: "Atalanta", logo: "atalanta.png" },
     { name: "Juventus", logo: "juventus.png" },
@@ -735,9 +641,10 @@ const draftCategories = {
     { name: "Roma", logo: "roma.png" },
     { name: "Benfica", logo: "benfica.png" },
     { name: "AT. Bilbao", logo: "at-bilbao.png" },
-    { name: "Girona", logo: "girona.png" },
-    { name: "Sevilla", logo: "sevilla.png" },
-    { name: "Real Sociedad", logo: "real-sociedad.png" }
+    { name: "Sporting", logo: "sporting.png" },
+    { name: "ATM", logo: "atm.png" },
+    { name: "Fenerbahce", logo: "fenerbahce.png" },
+    { name: "Galatasaray", logo: "galatasaray.png" }
   ],
   legendary: [
     { name: "Liverpool", logo: "liverpool.png" },
@@ -746,7 +653,7 @@ const draftCategories = {
     { name: "PSG", logo: "psg.png" },
     { name: "Bayern", logo: "bayern.png" },
     { name: "Inter", logo: "inter.png" },
-    { name: "ATM", logo: "atm.png" },
+    { name: "Bayer", logo: "bayer.png" },
     { name: "Barca", logo: "barca.png" },
     { name: "Real Madrid", logo: "real-madrid.png" },
     { name: "Empty 😔", logo: "none.png" },
@@ -784,13 +691,12 @@ document.getElementById("spin-button").addEventListener("click", async () => {
 
   let usedTeams = [];
 
+  // 🔥 ВАЖНО: один слот за другим!
   for (let i = 0; i < slots.length; i++) {
     const slot = slots[i];
     const category = slot.dataset.category;
 
     let availableTeams = [...draftCategories[category]];
-
-    // убираем команды, которые уже выпали
     availableTeams = availableTeams.filter(team => !usedTeams.includes(team.name));
 
     if (availableTeams.length === 0) {
@@ -798,21 +704,19 @@ document.getElementById("spin-button").addEventListener("click", async () => {
       continue;
     }
 
-    // Визуальная загрузка
-    slot.classList.add("spin");
-    slot.innerHTML = `<span class="spinning">⏳</span>`;
+    // Запускаем красивый обратный отсчёт
+    await startCountdown(slot);
 
-    await new Promise(resolve => setTimeout(resolve, 3000));
-
-    slot.classList.remove("spin");
-
+    // После обратного отсчета выбираем команду
     const team = availableTeams[Math.floor(Math.random() * availableTeams.length)];
 
     slot.innerHTML = `
-      <img src="assets/${team.logo}" alt="${team.name}" class="team-logo">
-      <span class="team-name">${team.name}</span>
-    `;
-    
+    <img src="assets/${team.logo}" alt="${team.name}" class="team-logo team-logo-appear">
+    <span class="team-name team-name-appear">${team.name}</span>
+  `;
+  
+  
+
     usedTeams.push(team.name);
   }
 
@@ -820,12 +724,26 @@ document.getElementById("spin-button").addEventListener("click", async () => {
   createRound2Button();
 });
 
+// Функция обратного отсчёта
+async function startCountdown(slot) {
+  let countdown = 3;
+  while (countdown > 0) {
+    slot.innerHTML = `<span class="countdown-number countdown-${countdown}">${countdown}</span>`;
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    countdown--;
+  }
+}
+
+
+
 
 function createRound2Button() {
   if (document.getElementById("to-round-2")) return;
 
   const round2Btn = document.createElement("button");
   round2Btn.id = "to-round-2";
+  document.getElementById("spin-button").style.display = "none";
+
   round2Btn.textContent = "➡️ 2 Round";
   round2Btn.style.marginTop = "30px";
   round2Btn.className = "action-button";
@@ -870,7 +788,8 @@ function createRound2Button() {
 
       selectedTeams.forEach(team => {
         const card = document.createElement("div");
-        card.className = "card";
+        card.className = "card card-appear";
+        
         card.dataset.team = team.name;
         card.innerHTML = `<span class="hidden-team">❓</span>`;
         card.addEventListener("click", () => {
@@ -920,6 +839,13 @@ if (updatedSelected.length === 2) {
 
         container.appendChild(card);
       });
+
+      setTimeout(() => {
+        document.querySelectorAll(".card").forEach(card => {
+          card.classList.add("card-shuffle");
+        });
+      }, 500);
+
     }, 2000);
   });
 }
@@ -985,10 +911,30 @@ document.getElementById("open-case-button").addEventListener("click", () => {
 });
 
 document.getElementById("restart-button").addEventListener("click", () => {
+
+  // 1. Вернуть кнопку SPIN на нормальное место
+const spinBtn = document.getElementById("spin-button");
+const spinButtonContainer = document.querySelector(".slot-machine-container");
+spinButtonContainer.appendChild(spinBtn);
+
+spinBtn.style.display = "block"; // показываем кнопку красиво по центру
+spinBtn.style.margin = "30px auto 0"; // центрируем её нормально
+
+
+
+// 2. Удалить кнопку перехода ко 2-му раунду если она есть
+const round2Btn = document.getElementById("to-round-2");
+if (round2Btn) {
+  round2Btn.remove();
+}
+
   // Скрываем все этапы
   document.getElementById("draft-stage-1").classList.remove("hidden");
   document.getElementById("draft-stage-2").classList.add("hidden");
   document.getElementById("draft-stage-3").classList.add("hidden");
+
+  document.getElementById("spin-button").style.display = "inline-block";
+
 
   document.getElementById("draft-round-label").textContent = "Round 1 - Draft";
 
