@@ -21,6 +21,58 @@ function resetRerollGame() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+  const infoAccordions = document.querySelectorAll(".info-accordion-header");
+
+  infoAccordions.forEach(header => {
+    header.addEventListener("click", () => {
+      const body = header.nextElementSibling;
+
+      // Сначала закрываем все
+      document.querySelectorAll(".info-accordion-body").forEach(b => {
+        if (b !== body) {
+          b.style.maxHeight = null;
+        }
+      });
+
+      // Открываем или закрываем выбранный
+      if (body.style.maxHeight) {
+        body.style.maxHeight = null;
+      } else {
+        body.style.maxHeight = body.scrollHeight + "px";
+      }
+    });
+  });
+
+  // 🔥 Заполняем списки
+  const fillTeamList = (id, teams) => {
+    const container = document.getElementById(id);
+    teams.forEach(team => {
+      const tile = document.createElement("div");
+      tile.className = "team-tile-info";
+  
+      const logo = document.createElement("img");
+      logo.src = `assets/${team.logo}`;
+      logo.alt = team.name;
+  
+      const name = document.createElement("span");
+      name.textContent = team.name;
+  
+      tile.appendChild(logo);
+      tile.appendChild(name);
+      container.appendChild(tile);
+    });
+  };
+  
+
+  fillTeamList("random-list", draftCategories.random);
+  fillTeamList("middle-list", draftCategories.middle);
+  fillTeamList("high-list", draftCategories.high);
+  fillTeamList("top-list", draftCategories.top);
+  fillTeamList("legendary-list", draftCategories.legendary);
+
+  
   // Важные элементы
   const draftTab = document.getElementById("draftTab");
   const draftContainer = document.getElementById("draft-container");
@@ -671,6 +723,12 @@ const draftCategories = {
 
 
 document.getElementById("spin-button").addEventListener("click", async () => {
+
+  const spinButton = document.getElementById("spin-button");
+  spinButton.disabled = true;
+
+
+
   const spinAudio = document.getElementById("spin-sound");
   if (spinAudio) {
     try {
@@ -720,7 +778,7 @@ document.getElementById("spin-button").addEventListener("click", async () => {
     usedTeams.push(team.name);
   }
 
-  document.getElementById("draft-round-label").textContent = "Round 1";
+  document.getElementById("draft-round-label").textContent = "Round 1 - Slots";
   createRound2Button();
 });
 
@@ -827,7 +885,7 @@ if (updatedSelected.length === 2) {
   
 
   // показываем кнопку 3 раунда
-  document.getElementById("to-round-3").classList.remove("hidden");
+  document.getElementById("to-round-3").style.display = "inline-block";
         
             // отключаем все клики по карточкам
             document.querySelectorAll(".card").forEach(c => {
@@ -851,6 +909,10 @@ if (updatedSelected.length === 2) {
 }
 
 document.getElementById("to-round-3").addEventListener("click", () => {
+
+  document.getElementById("restart-button").disabled = true;
+
+
   document.getElementById("draft-round-label").textContent = "Round 3 - Case";
 
   document.getElementById("draft-stage-2").classList.add("hidden");
@@ -895,6 +957,11 @@ document.getElementById("to-round-3").addEventListener("click", () => {
 });
 
 document.getElementById("open-case-button").addEventListener("click", () => {
+
+  const openCaseButton = document.getElementById("open-case-button");
+  openCaseButton.disabled = true;
+  
+
   startCaseSpin({
     containerId: "case-container",
     stripId: "case-strip",
@@ -905,12 +972,21 @@ document.getElementById("open-case-button").addEventListener("click", () => {
       const chanceText = chance ? ` (Drop Chance: ${chance["Drop Chance %"].toFixed(2)}%)` : "";
       document.getElementById("case-winner-name").textContent = `${winnerName}${chanceText}`;
       document.getElementById("case-winner").classList.remove("hidden");
+
+      document.getElementById("restart-button").disabled = false;
+
     }
   });
   
 });
 
 document.getElementById("restart-button").addEventListener("click", () => {
+
+
+  document.getElementById("open-case-button").disabled = false;
+
+  document.getElementById("spin-button").disabled = false;
+
 
   // 1. Вернуть кнопку SPIN на нормальное место
 const spinBtn = document.getElementById("spin-button");
@@ -944,6 +1020,10 @@ if (round2Btn) {
 
   document.getElementById("case-strip").innerHTML = "";
   document.getElementById("case-winner").classList.add("hidden");
+
+  document.getElementById("to-round-3").style.display = "none";
+
+
   document.getElementById("to-round-3").classList.add("hidden");
 
   document.getElementById("card-container").innerHTML = "";

@@ -1184,6 +1184,7 @@ h1 {
 
 
 #to-round-3 {
+  display: none;
   margin-top: 40px;
   padding: 12px 24px;
   font-size: 18px;
@@ -1995,13 +1996,15 @@ h1 {
 
 .info-section-title {
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 200;
   color: #00ffff;
   text-shadow: 0 0 6px rgba(0,255,255,0.2);
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: -60px;     /* ✅ добавляем равномерный отступ сверху */
+  margin-bottom: 10px;  /* ✅ делаем снизу такой же отступ */
   letter-spacing: 1px;
 }
+
 
 .team-total {
   margin-top: 12px;
@@ -2470,3 +2473,181 @@ h1 {
     transform: translateX(0);
   }
 }
+
+#spin-button:disabled {
+  background: #555;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+#open-case-button:disabled {
+  background: #555;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+#restart-button:disabled {
+  background: #555;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+#info-accordion {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.info-accordion-item {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.info-accordion-header {
+  width: 100%;
+  padding: 15px 20px;
+  text-align: left;
+  background: rgba(0, 255, 255, 0.1);
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.info-accordion-header:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.info-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+}
+
+.info-accordion-body ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.info-accordion-body li {
+  padding: 8px 0;
+  font-size: 16px;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Яркие, сочные аккордеоны */
+.info-accordion-item.random {
+  background: rgba(0, 255, 100, 0.3);
+  border: 2px solid #00ff64;
+  box-shadow: 0 0 20px #00ff64;
+}
+
+.info-accordion-item.middle {
+  background: rgba(0, 200, 255, 0.3);
+  border: 2px solid #00c8ff;
+  box-shadow: 0 0 20px #00c8ff;
+}
+
+.info-accordion-item.high {
+  background: rgba(255, 220, 0, 0.3);
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 20px #ffd700;
+}
+
+.info-accordion-item.top {
+  background: rgba(180, 100, 255, 0.3);
+  border: 2px solid #b464ff;
+  box-shadow: 0 0 20px #b464ff;
+}
+
+.info-accordion-item.legendary {
+  background: rgba(255, 50, 50, 0.3);
+  border: 2px solid #ff3232;
+  box-shadow: 0 0 20px #ff3232;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  padding: 15px 0;
+  justify-items: center;
+}
+
+.team-tile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.team-tile-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.team-tile-info span {
+  font-size: 14px;
+  color: white;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* 🔥 Больше ширина плитки */
+  gap: 10px; /* 🔥 Меньше расстояние между плитками */
+  padding: 15px 0;
+  justify-items: center;
+}
+
+.team-tile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  width: 120px; /* 🔥 Шире плитка! */
+  text-align: center;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.team-tile-info img {
+  width: 70px; /* Можно тоже чуть увеличить */
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.team-tile-info span {
+  font-size: 14px;
+  color: white;
+}
+

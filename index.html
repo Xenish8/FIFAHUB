@@ -11,7 +11,13 @@
   <div class="background-overlay">
     <h1 class="glow-title">FIFA HUB STORY</h1>
     <div id="season-line">
+
+
+
+
+      
       <span class="season-badge fifa19">FIFA 19</span>
+      
       <span class="season-badge fifa20">FIFA 20</span>
       <span class="season-badge fifa21">FIFA 21</span>
       <span class="season-badge fifa22">FIFA 22</span>
@@ -140,146 +146,68 @@
     <div id="info-container" class="tab-section hidden">
       <h3 class="info-section-title">TEAM CATEGORIES</h3>
 
-      <div class="team-categories">
-        
-        <div class="team-block middle">
-          <h3>Middle Teams  28</h3>
-          <ul>
-            <li>Werder</li>
-            <li>Udinese</li>
-            <li>Celtic</li>
-            <li>Rangers</li>
-            <li>Yong Boys</li>
-            <li>Trabzonspor</li>
-            <li>AEK</li>
-            <li>Victoria Plzen</li>
-            <li>Sparta Praga</li>
-            <li>Slavia Praga</li>
-            <li>Shahtar</li>
-            <li>PAOK</li>
-            <li>Panathinaikos</li>
-            <li>Hajduk Split</li>
-            <li>Feyenoord</li>
-            <li>Dynamo Kiev</li>
-            <li>Dynamo Zagreb</li>
-            <li>Apoel</li>
-            <li>Salzburg</li>
-            <li>Brugge</li>
-            <li>Antwerp</li>
-            <li>Anderlecht</li>
-            <li>Copenhagen</li>
-            <li>Leeds Utd.</li>
-            <li>Southampton</li>
-            <li>Venezia</li>
-            <li>Twente</li>
-            <li>Steaua B.</li>
-          </ul>
+      <div id="info-accordion">
+
+        <div class="info-accordion-item random">
+          <button class="info-accordion-header">Low Teams</button>
+          <div class="info-accordion-body">
+            <div id="random-list" class="team-grid"></div>
+
           </div>
-        
-    
-        <div class="team-block high">
-          <h3>High Teams 34</h3>
-          <ul>
-            <li>Crystal Palace</li>
-            <li>Everton</li>
-            <li>Nottingham F.</li>
-            <li>Wolwes</li>
-            <li>Monaco</li>
-            <li>Lille</li>
-            <li>Lion</li>
-            <li>O. Marselle</li>
-            <li>Lens</li>
-            <li>Gladbach</li>
-            <li>Union</li>
-            <li>Stuttgart</li>
-            <li>Wolfsburg</li>
-            <li>Frankfurt</li>
-            <li>Bologna</li>
-            <li>Fiorentina</li>
-            <li>Torino</li>
-            <li>Ajax</li>
-            <li>Feyenoord</li>
-            <li>PSV</li>
-            <li>Porto</li>
-            <li>Braga</li>
-            <li>Sporting</li>
-            <li>Celta</li>
-            <li>Mallorca</li>
-            <li>Betis</li>
-            <li>Valencia</li>
-            <li>Villareal</li>
-            <li>Besiktas</li>
-            <li>Fenerbahce</li>
-            <li>Galatasaray</li>
-            <li>Bournemouth</li>
-            <li>Brentford</li>
-            <li>Leicester</li>
-          </ul>
         </div>
-    
-        <div class="team-block top">
-          <h3>Top Teams 20</h3>
-          <ul>
-            <li>SPURS</li>
-            <li>Westham Utd.</li>
-            <li>Aston Villa</li>
-            <li>Chelsea</li>
-            <li>Man. Utd</li>
-            <li>Newcastle</li>
-            <li>BVB</li>
-            <li>Bayer</li>
-            <li>Leipzig</li>
-            <li>Atalanta</li>
-            <li>Juventus</li>
-            <li>Lazio</li>
-            <li>Milan</li>
-            <li>Napoli</li>
-            <li>Roma</li>
-            <li>Benfica</li>
-            <li>AT. Bilbao</li>
-            <li>Girona</li>
-            <li>Sevilla</li>
-            <li>Real Sociedad</li>
-          </ul>
+      
+        <div class="info-accordion-item middle">
+          <button class="info-accordion-header">Middle Teams 1</button>
+          <div class="info-accordion-body">
+            <div id="middle-list" class="team-grid"></div>
+          </div>
         </div>
-    
-        <div class="team-block legendary">
-          <h3>Legendary 9</h3>
-          <ul>
-            <li>Liverpool</li>
-            <li>Man. City</li>
-            <li>Arsenal</li>
-            <li>PSG</li>
-            <li>Bayern</li>
-            <li>Inter</li>
-            <li>ATM</li>
-            <li>Barca</li>
-            <li>Real Madrid</li>
-          </ul>
+      
+        <div class="info-accordion-item high">
+          <button class="info-accordion-header">Middle Teams 2</button>
+          <div class="info-accordion-body">
+            <div id="high-list" class="team-grid"></div>
+          </div>
         </div>
-    
+      
+        <div class="info-accordion-item top">
+          <button class="info-accordion-header">Top Teams</button>
+          <div class="info-accordion-body">
+            <div id="top-list" class="team-grid"></div>
+          </div>
+        </div>
+      
+        <div class="info-accordion-item legendary">
+          <button class="info-accordion-header">Legendary Teams</button>
+          <div class="info-accordion-body">
+            <div id="legendary-list" class="team-grid"></div>
+          </div>
+        </div>
+      
       </div>
+      
+      
 
 <div class="probability-row">
   <div class="probability-card green">
-    <h4>Random</h4>
-    <p>Each team: 1.10%</p>
+    <h4>Low</h4>
+    <p>Each team: 5.00%</p>
   </div>
   <div class="probability-card blue">
-    <h4>Middle</h4>
-    <p>Each team: 3.57%</p>
+    <h4>Middle 1</h4>
+    <p>Each team: 4.76%</p>
   </div>
   <div class="probability-card yellow">
-    <h4>High</h4>
-    <p>Each team: 2.94%</p>
+    <h4>Middle 2</h4>
+    <p>Each team: 4.55%</p>
   </div>
   <div class="probability-card purple">
     <h4>Top</h4>
-    <p>Each team: 5.00%</p>
+    <p>Each team: 5.26%</p>
   </div>
   <div class="probability-card red">
     <h4>Legendary</h4>
-    <p>Each team: 11.11%</p>
+    <p>Each team: 5.26%%</p>
   </div>
 </div>
       
