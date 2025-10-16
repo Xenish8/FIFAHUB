@@ -194,6 +194,8 @@ h1 {
 .fifa22 { background: #00bcd4; }
 .fifa23 { background: #ff7043; }
 .fifa24 { background: #fdd835; color: #000; }
+.fifa252 { background: #d814a7; }
+
 
 @keyframes pulse-glow {
   0% {
@@ -2218,6 +2220,7 @@ h1 {
 .fifa22 { background: #00ccff; color: black; }     /* сине-голубой */
 .fifa23 { background: #ff3333; color: white; }     /* красный */
 .fifa24 { background: #ffaa00; color: black; }     /* оранжевый */
+.fifa252 { background: #e277c7;  }
 
 @keyframes badgeGlow {
   0%, 100% {
