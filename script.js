@@ -332,6 +332,9 @@ const teamDataAndrey = {
     { fifa: "FIFA 24", tournament: "Champions League" },
     { fifa: "FIFA 24", tournament: "SuperCup" }
   ],
+  atbilbao: [
+    { fifa: "FIFA 25", tournament: "Champions League" }
+  ],
   switzerland: [
     { fifa: "FIFA 21", tournament: "World Cup" },
     { fifa: "FIFA 21", tournament: "World Cup" },
@@ -418,6 +421,9 @@ const teamDataMaks = {
   galatasaray: [
     { fifa: "FIFA 23", tournament: "Champions League" }
   ],
+  nottingham: [
+    { fifa: "FIFA 25", tournament: "Champions League" }
+  ],
   scotland: [
     { fifa: "FIFA 23", tournament: "World Cup" }
   ],
@@ -488,7 +494,8 @@ const fifaColors = {
   'FIFA 21': '#7B1FA2',
   'FIFA 22': '#0288D1',
   'FIFA 23': '#C62828',
-  'FIFA 24': '#EF6C00'
+  'FIFA 24': '#EF6C00',
+  'FIFA 25': '#D814A7'
 };
 
 const tournamentColors = {
